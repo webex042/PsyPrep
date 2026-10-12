@@ -1,6 +1,7 @@
 {
   "name": "psyprep",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "Production-grade MERN Computer-Based Testing (CBT) & mock exam platform tailored for NPTEL Psychology of Learning, featuring Swiss Grid aesthetics, server-authoritative timer, and Recharts analytics.",
   "private": true,
   "type": "module",
@@ -16,6 +17,10 @@
     "swiss-grid",
     "serverless"
   ],
+=======
+  "private": true,
+  "type": "module",
+>>>>>>> 817dd1621070adc61d06c18e9643add093cda180
   "workspaces": [
     "server",
     "client"
@@ -30,6 +35,7 @@
     "test:client": "npm run test --workspace=client",
     "seed": "npm run seed --workspace=server"
   },
+<<<<<<< HEAD
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "cookie-parser": "^1.4.7",
@@ -43,6 +49,8 @@
     "mongoose": "^8.9.5",
     "zod": "^3.24.1"
   },
+=======
+>>>>>>> 817dd1621070adc61d06c18e9643add093cda180
   "devDependencies": {
     "concurrently": "^9.1.2"
   }

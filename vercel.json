@@ -1,7 +1,12 @@
 {
+<<<<<<< HEAD
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
   "buildCommand": "npm run build",
+=======
+  "version": 2,
+  "buildCommand": "cd client && npm install && npm run build",
+>>>>>>> 817dd1621070adc61d06c18e9643add093cda180
   "outputDirectory": "client/dist",
   "crons": [
     {
@@ -11,10 +16,13 @@
   ],
   "rewrites": [
     {
+<<<<<<< HEAD
       "source": "/api",
       "destination": "/api/index.js"
     },
     {
+=======
+>>>>>>> 817dd1621070adc61d06c18e9643add093cda180
       "source": "/api/(.*)",
       "destination": "/api/index.js"
     },
@@ -24,4 +32,7 @@
     }
   ]
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 817dd1621070adc61d06c18e9643add093cda180
