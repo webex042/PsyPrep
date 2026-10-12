@@ -143,16 +143,15 @@ npm run build
 
 ---
 
-## ☁️ Vercel Serverless Deployment Guide
+## ☁️ Vercel Deployment Guide (Multi-Service Project)
 
-<<<<<<< HEAD
-This project is configured out-of-the-box for full-stack serverless deployment on [Vercel](https://vercel.com):
+This project is configured out-of-the-box for multi-service deployment on [Vercel](https://vercel.com):
 
 ### 1. Import Repository to Vercel
-1. Push your code to GitHub.
-2. In your Vercel Dashboard, click **Add New Project** → **Import** your repository.
+1. Push your code to GitHub (`origin/main`).
+2. In your Vercel Dashboard, click **Add New Project** → **Import** your repository (`PsyPrep`).
 3. Keep the **Root Directory** as `./`.
-4. Vercel automatically detects the build command (`npm run build`) and output directory (`client/dist`) from [`vercel.json`](file:///vercel.json).
+4. Vercel automatically detects the multi-service architecture from [`vercel.json`](file:///vercel.json) (`client` via Vite, `server` via Express).
 
 ### 2. Configure Environment Variables in Vercel
 In **Project Settings → Environment Variables**, add:
@@ -175,37 +174,10 @@ Once deployed on Vercel, populate your empty MongoDB Atlas cluster using either:
   ```
   *(Note: If the database is completely empty, the `/api/quizzes/seed` endpoint automatically allows initial seeding without authentication).*
 
-### 4. Vercel Architecture & Crons
-- **Static Assets:** React SPA is built by Vite into `client/dist` and served worldwide via Vercel Edge CDN.
-- **Serverless API:** All requests to `/api/*` are handled by [`api/index.js`](file:///api/index.js) with native Express routing and MongoDB connection caching (`maxPoolSize: 10`, `bufferCommands: false`).
-- **Automated Expiration Cron:** Vercel Cron automatically invokes `/api/attempts/finalize-expired` every minute using the schedule in `vercel.json` to sweep and grade any expired attempts in the background.
-=======
-This project is configured out-of-the-box for serverless deployment on Vercel:
-
-1. **Deploy Repository:**
-   Connect your GitHub repository to Vercel. Root directory is `./`.
-
-2. **Configure Environment Variables in Vercel Project Settings:**
-   - `MONGODB_URI`: Your MongoDB Atlas URI.
-   - `JWT_SECRET`: Random 64-character secret.
-   - `JWT_REFRESH_SECRET`: Random 64-character secret.
-   - `CRON_SECRET`: Random secret matching your Vercel Cron header.
-
-3. **Vercel Serverless Architecture:**
-   - Client build outputs to `client/dist`.
-   - API requests `/api/*` are handled by `api/index.js` (cached Atlas connection pattern).
-   - Vercel Cron automatically invokes `/api/attempts/finalize-expired` every minute using the schedule in `vercel.json`:
-     ```json
-     {
-       "crons": [
-         {
-           "path": "/api/attempts/finalize-expired",
-           "schedule": "* * * * *"
-         }
-       ]
-     }
-     ```
->>>>>>> 817dd1621070adc61d06c18e9643add093cda180
+### 4. Vercel Services Architecture & Crons
+- **Client Service (`client`):** React SPA built with Vite into static assets served on `/(.*)`.
+- **Server Service (`server`):** Express backend serving API endpoints on `/api` and `/api/(.*)`.
+- **Automated Expiration Cron:** Vercel Cron invokes `/api/attempts/finalize-expired` every minute using the schedule in `vercel.json` to sweep and grade any expired attempts in the background.
 
 ---
 
