@@ -1,0 +1,2190 @@
+[
+  {
+    "id": "q_1",
+    "questionNumber": 1,
+    "stem": "What is Psychology?",
+    "options": [
+      { "id": "A", "text": "Just a social media trend" },
+      { "id": "B", "text": "An art of living" },
+      { "id": "C", "text": "A subject about human body" },
+      { "id": "D", "text": "A study of cognitive processes & behavior" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Introduction to Psychology",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_2",
+    "questionNumber": 2,
+    "stem": "A broad field of study that explores a variety of questions about thoughts, feelings and actions is -------?",
+    "options": [
+      { "id": "A", "text": "Society" },
+      { "id": "B", "text": "Globalization" },
+      { "id": "C", "text": "Psychology" },
+      { "id": "D", "text": "Social Science" }
+    ],
+    "correctAnswer": "C",
+    "subject": "Psychology",
+    "topic": "Introduction to Psychology",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_3",
+    "questionNumber": 3,
+    "stem": "Learning has been a central topic of research in ___.",
+    "options": [
+      { "id": "A", "text": "Chemistry" },
+      { "id": "B", "text": "Physics" },
+      { "id": "C", "text": "Mathematics" },
+      { "id": "D", "text": "Psychology" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Introduction to Psychology",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_4",
+    "questionNumber": 4,
+    "stem": "The word Psyche means -------------?",
+    "options": [
+      { "id": "A", "text": "Body or physique" },
+      { "id": "B", "text": "Mind or soul" },
+      { "id": "C", "text": "Spirituality" },
+      { "id": "D", "text": "Hormones" }
+    ],
+    "correctAnswer": "B",
+    "subject": "Psychology",
+    "topic": "Introduction to Psychology",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_5",
+    "questionNumber": 5,
+    "stem": "The ___ of learning focuses on how people learn.",
+    "options": [
+      { "id": "A", "text": "psychology" },
+      { "id": "B", "text": "english" },
+      { "id": "C", "text": "chemistry" },
+      { "id": "D", "text": "none of the given" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Psychology",
+    "topic": "Introduction to Psychology",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_6",
+    "questionNumber": 6,
+    "stem": "To help people to function effectively and fulfill their own unique potential” is the aim of----------------?",
+    "options": [
+      { "id": "A", "text": "Humanistic psychology" },
+      { "id": "B", "text": "Evolutionary biology" },
+      { "id": "C", "text": "Computer science" },
+      { "id": "D", "text": "Microbiology" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Psychology",
+    "topic": "Introduction to Psychology",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_7",
+    "questionNumber": 7,
+    "stem": "Psychology is not an independent science, but dependent on other fields.",
+    "options": [
+      { "id": "A", "text": "True" },
+      { "id": "B", "text": "False" }
+    ],
+    "correctAnswer": "B",
+    "subject": "Psychology",
+    "topic": "Introduction to Psychology",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_8",
+    "questionNumber": 8,
+    "stem": "The study of changes in an individual’s behavior during his/her lifetime is called ----------.",
+    "options": [
+      { "id": "A", "text": "Hormonal psychology" },
+      { "id": "B", "text": "Gender psychology" },
+      { "id": "C", "text": "Developmental Psychology" },
+      { "id": "D", "text": "Genetics or Heredity" }
+    ],
+    "correctAnswer": "C",
+    "subject": "Psychology",
+    "topic": "Introduction to Psychology",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_9",
+    "questionNumber": 9,
+    "stem": "The study of differences and similarities in the behavior of animals of different species is called -----------------------.",
+    "options": [
+      { "id": "A", "text": "Developmental psychology" },
+      { "id": "B", "text": "Cultural psychology" },
+      { "id": "C", "text": "Personality psychology" },
+      { "id": "D", "text": "Comparative Psychology" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Introduction to Psychology",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_10",
+    "questionNumber": 10,
+    "stem": "Humans are incapable of learning.",
+    "options": [
+      { "id": "A", "text": "True" },
+      { "id": "B", "text": "False" }
+    ],
+    "correctAnswer": "B",
+    "subject": "Psychology",
+    "topic": "Introduction to Psychology",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_11",
+    "questionNumber": 11,
+    "stem": "Learning is often seen as the contiguous causal effect of ____ on behavior.",
+    "options": [
+      { "id": "A", "text": "blood" },
+      { "id": "B", "text": "bone density" },
+      { "id": "C", "text": "trauma" },
+      { "id": "D", "text": "experience" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Foundations of Learning",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_12",
+    "questionNumber": 12,
+    "stem": "In order to say that learning has occurred, a hidden change in behavior must occur.",
+    "options": [
+      { "id": "A", "text": "True" },
+      { "id": "B", "text": "False" }
+    ],
+    "correctAnswer": "B",
+    "subject": "Psychology",
+    "topic": "Foundations of Learning",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_13",
+    "questionNumber": 13,
+    "stem": "Which of the following is not a mental construct?",
+    "options": [
+      { "id": "A", "text": "skeleton" },
+      { "id": "B", "text": "knowledge" },
+      { "id": "C", "text": "representations" },
+      { "id": "D", "text": "associations" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Psychology",
+    "topic": "Foundations of Learning",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_14",
+    "questionNumber": 14,
+    "stem": "Learning changes the ___ structure of the brain through the process of continuous interactions between the learner and the external environment.",
+    "options": [
+      { "id": "A", "text": "physical" },
+      { "id": "B", "text": "social" },
+      { "id": "C", "text": "biological" },
+      { "id": "D", "text": "none of the given" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Psychology",
+    "topic": "Foundations of Learning",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_15",
+    "questionNumber": 15,
+    "stem": "___ shapes the learning process.",
+    "options": [
+      { "id": "A", "text": "Only thoughts" },
+      { "id": "B", "text": "Only emotions" },
+      { "id": "C", "text": "Both thoughts and emotions" },
+      { "id": "D", "text": "Neither thoughts nor emotions" }
+    ],
+    "correctAnswer": "C",
+    "subject": "Psychology",
+    "topic": "Foundations of Learning",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_16",
+    "questionNumber": 16,
+    "stem": "Watson's work included the famous Little Albert experiment in which he conditioned a small child to ___ a white rat.",
+    "options": [
+      { "id": "A", "text": "fear" },
+      { "id": "B", "text": "love" },
+      { "id": "C", "text": "hate" },
+      { "id": "D", "text": "play with" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Psychology",
+    "topic": "Foundations of Learning",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_17",
+    "questionNumber": 17,
+    "stem": "Behaviorism dominated psychology for much of the early ___ century.",
+    "options": [
+      { "id": "A", "text": "20th" },
+      { "id": "B", "text": "19th" },
+      { "id": "C", "text": "18th" },
+      { "id": "D", "text": "17th" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Psychology",
+    "topic": "Foundations of Learning",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_18",
+    "questionNumber": 18,
+    "stem": "The state of “conscious incompetence” may be valuable ____ of a learning experience.",
+    "options": [
+      { "id": "A", "text": "at the end" },
+      { "id": "B", "text": "in the middle" },
+      { "id": "C", "text": "2 years after the end" },
+      { "id": "D", "text": "at the start" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Foundations of Learning",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_19",
+    "questionNumber": 19,
+    "stem": "Which of the following is not an outcome of effective e-learning?",
+    "options": [
+      { "id": "A", "text": "wider range of strategies" },
+      { "id": "B", "text": "more reflective approach" },
+      { "id": "C", "text": "more positive emotions towards learning" },
+      { "id": "D", "text": "more disconnected knowledge" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Foundations of Learning",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_20",
+    "questionNumber": 20,
+    "stem": "Instrumental conditioning is an example of ___ learning.",
+    "options": [
+      { "id": "A", "text": "sensitization" },
+      { "id": "B", "text": "habituation" },
+      { "id": "C", "text": "associative" },
+      { "id": "D", "text": "meaningful" }
+    ],
+    "correctAnswer": "C",
+    "subject": "Psychology",
+    "topic": "Foundations of Learning",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_21",
+    "questionNumber": 21,
+    "stem": "The connections between nerves cells are called ___.",
+    "options": [
+      { "id": "A", "text": "systems" },
+      { "id": "B", "text": "syntaxes" },
+      { "id": "C", "text": "neurons" },
+      { "id": "D", "text": "synapses" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Memory & Cognitive Systems",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_22",
+    "questionNumber": 22,
+    "stem": "In order to create a ___, information must be changed into a usable form, which occurs through a process known as encoding.",
+    "options": [
+      { "id": "A", "text": "past memory" },
+      { "id": "B", "text": "new imagination" },
+      { "id": "C", "text": "new memory" },
+      { "id": "D", "text": "past imagination" }
+    ],
+    "correctAnswer": "C",
+    "subject": "Psychology",
+    "topic": "Memory & Cognitive Systems",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_23",
+    "questionNumber": 23,
+    "stem": "Calling back the stored information in response to some cue for use in a process or activity is called ___.",
+    "options": [
+      { "id": "A", "text": "Retrieval" },
+      { "id": "B", "text": "Recall" },
+      { "id": "C", "text": "Recollection" },
+      { "id": "D", "text": "All of the given" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Memory & Cognitive Systems",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_24",
+    "questionNumber": 24,
+    "stem": "For many with ___ deficits, reading facial expressions and knowing how to respond are confusing daily challenges.",
+    "options": [
+      { "id": "A", "text": "memory" },
+      { "id": "B", "text": "intelligence" },
+      { "id": "C", "text": "social cognition" },
+      { "id": "D", "text": "biological cognition" }
+    ],
+    "correctAnswer": "C",
+    "subject": "Psychology",
+    "topic": "Memory & Cognitive Systems",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_25",
+    "questionNumber": 25,
+    "stem": "The Information Processing View of Learning assumes that there are limits to how much information can be processed at each stage.",
+    "options": [
+      { "id": "A", "text": "True" },
+      { "id": "B", "text": "False" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Psychology",
+    "topic": "Memory & Cognitive Systems",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_26",
+    "questionNumber": 26,
+    "stem": "The Information Processing View of Learning assumes that information process is involved in ___",
+    "options": [
+      { "id": "A", "text": "forgetting" },
+      { "id": "B", "text": "remembering" },
+      { "id": "C", "text": "perceiving" },
+      { "id": "D", "text": "All of the given" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Memory & Cognitive Systems",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_27",
+    "questionNumber": 27,
+    "stem": "The capacity of the sensory register is ___.",
+    "options": [
+      { "id": "A", "text": "very small" },
+      { "id": "B", "text": "very large" },
+      { "id": "C", "text": "7+/-2 chunks" },
+      { "id": "D", "text": "unlimited" }
+    ],
+    "correctAnswer": "B",
+    "subject": "Psychology",
+    "topic": "Memory & Cognitive Systems",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_28",
+    "questionNumber": 28,
+    "stem": "Most children do not begin to engage in the process of rehearsal on their own until about age ___.",
+    "options": [
+      { "id": "A", "text": "seven" },
+      { "id": "B", "text": "two" },
+      { "id": "C", "text": "thirteen" },
+      { "id": "D", "text": "one" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Psychology",
+    "topic": "Memory & Cognitive Systems",
+    "difficulty": "hard",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_29",
+    "questionNumber": 29,
+    "stem": "___ provides an interface between the sub-systems of working memory and the part of long term memory specialized for episodic memory.",
+    "options": [
+      { "id": "A", "text": "Phonological loop" },
+      { "id": "B", "text": "Visuo-spatial sketchpad" },
+      { "id": "C", "text": "Retrieval buffer" },
+      { "id": "D", "text": "Episodic buffer" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Memory & Cognitive Systems",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_30",
+    "questionNumber": 30,
+    "stem": "Memories of specific episodes of one’s life refers to ___.",
+    "options": [
+      { "id": "A", "text": "declarative memory" },
+      { "id": "B", "text": "experimental episodic memory" },
+      { "id": "C", "text": "autobiographical episodic memory" },
+      { "id": "D", "text": "procedural memory" }
+    ],
+    "correctAnswer": "C",
+    "subject": "Psychology",
+    "topic": "Memory & Cognitive Systems",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_31",
+    "questionNumber": 31,
+    "stem": "___ thinking is the ability to create mental representations of objects, places, events, or people in your mind.",
+    "options": [
+      { "id": "A", "text": "General" },
+      { "id": "B", "text": "Creative" },
+      { "id": "C", "text": "Divergent" },
+      { "id": "D", "text": "Symbolic" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Thinking & Cognition",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_32",
+    "questionNumber": 32,
+    "stem": "We compare new information to our ___ of the person, place, or thing, so we know how to categorize the new information mentally.",
+    "options": [
+      { "id": "A", "text": "protofit" },
+      { "id": "B", "text": "protobite" },
+      { "id": "C", "text": "prototype" },
+      { "id": "D", "text": "none of the given" }
+    ],
+    "correctAnswer": "C",
+    "subject": "Psychology",
+    "topic": "Thinking & Cognition",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_33",
+    "questionNumber": 33,
+    "stem": "Which of the following is not true?",
+    "options": [
+      { "id": "A", "text": "Thinking is a higher mental process" },
+      { "id": "B", "text": "Thinking is a sub-vocal talking" },
+      { "id": "C", "text": "Thinking is fulfilling a need or problem solving" },
+      { "id": "D", "text": "Thinking is only done in verbal symbols" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Thinking & Cognition",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_34",
+    "questionNumber": 34,
+    "stem": "Mental images are ___.",
+    "options": [
+      { "id": "A", "text": "Auditory" },
+      { "id": "B", "text": "Visual" },
+      { "id": "C", "text": "Gustatory" },
+      { "id": "D", "text": "All of the given" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Thinking & Cognition",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_35",
+    "questionNumber": 35,
+    "stem": "___ organize complex phenomena into simpler, easily understandable, and usable categories and help to solve our problems.",
+    "options": [
+      { "id": "A", "text": "Concepts" },
+      { "id": "B", "text": "Propositions" },
+      { "id": "C", "text": "Constructs" },
+      { "id": "D", "text": "Components" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Psychology",
+    "topic": "Thinking & Cognition",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_36",
+    "questionNumber": 36,
+    "stem": "The lowermost level of Bloom’s taxonomy is ___.",
+    "options": [
+      { "id": "A", "text": "remember" },
+      { "id": "B", "text": "apply" },
+      { "id": "C", "text": "understand" },
+      { "id": "D", "text": "analyze" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Psychology",
+    "topic": "Thinking & Cognition",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_37",
+    "questionNumber": 37,
+    "stem": "The psychomotor domain of the Bloom’s taxonomy is concerned with ___.",
+    "options": [
+      { "id": "A", "text": "Biological makeup" },
+      { "id": "B", "text": "Thoughts and beliefs" },
+      { "id": "C", "text": "Feelings and emotions" },
+      { "id": "D", "text": "Skilled behavior" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Thinking & Cognition",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_38",
+    "questionNumber": 38,
+    "stem": "Which of the following is an example of meta-cognition skills?",
+    "options": [
+      { "id": "A", "text": "Ignoring your limits" },
+      { "id": "B", "text": "Self-monitoring" },
+      { "id": "C", "text": "Skimming all important information" },
+      { "id": "D", "text": "All of the given" }
+    ],
+    "correctAnswer": "B",
+    "subject": "Psychology",
+    "topic": "Thinking & Cognition",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_39",
+    "questionNumber": 39,
+    "stem": "___ critical thinking skill helps you analyze and process information to come to an unbiased conclusion.",
+    "options": [
+      { "id": "A", "text": "Open-mindedness" },
+      { "id": "B", "text": "Self-regulation" },
+      { "id": "C", "text": "Self-control" },
+      { "id": "D", "text": "Observation" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Psychology",
+    "topic": "Thinking & Cognition",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_40",
+    "questionNumber": 40,
+    "stem": "The inspiration phase of the creative thinking process refers to the ___ stage.",
+    "options": [
+      { "id": "A", "text": "Incubation" },
+      { "id": "B", "text": "Insight" },
+      { "id": "C", "text": "Evaluation" },
+      { "id": "D", "text": "Preparation" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Thinking & Cognition",
+    "difficulty": "hard",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_41",
+    "questionNumber": 41,
+    "stem": "Which of the following is true about motivation?",
+    "options": [
+      { "id": "A", "text": "It is a physical impulse" },
+      { "id": "B", "text": "It is an external process" },
+      { "id": "C", "text": "It has a willingness to activate but not channel the attitudes of learners" },
+      { "id": "D", "text": "None of the given" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Motivation Theories",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_42",
+    "questionNumber": 42,
+    "stem": "The term “motivation” comes from a ___ word.",
+    "options": [
+      { "id": "A", "text": "Greek" },
+      { "id": "B", "text": "Latin" },
+      { "id": "C", "text": "Hindi" },
+      { "id": "D", "text": "Bengali" }
+    ],
+    "correctAnswer": "B",
+    "subject": "Psychology",
+    "topic": "Motivation Theories",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_43",
+    "questionNumber": 43,
+    "stem": "It is called extrinsic motivation if causal factor is ___.",
+    "options": [
+      { "id": "A", "text": "curiosity" },
+      { "id": "B", "text": "social pressure" },
+      { "id": "C", "text": "self-satisfaction" },
+      { "id": "D", "text": "needs" }
+    ],
+    "correctAnswer": "B",
+    "subject": "Psychology",
+    "topic": "Motivation Theories",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_44",
+    "questionNumber": 44,
+    "stem": "___ motivation is considered to be more crucial for students as it is associated with deep learning, better performance and self-efficacy.",
+    "options": [
+      { "id": "A", "text": "Intrinsic" },
+      { "id": "B", "text": "Extrinsic" },
+      { "id": "C", "text": "Introjected regulation" },
+      { "id": "D", "text": "None of the given" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Psychology",
+    "topic": "Motivation Theories",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_45",
+    "questionNumber": 45,
+    "stem": "___ proposed that there are three primary drives that drive human behavior.",
+    "options": [
+      { "id": "A", "text": "Hull" },
+      { "id": "B", "text": "Watson" },
+      { "id": "C", "text": "Piaget" },
+      { "id": "D", "text": "Gestalt" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Psychology",
+    "topic": "Motivation Theories",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_46",
+    "questionNumber": 46,
+    "stem": "Expectancy Theory of Motivation was developed by ___.",
+    "options": [
+      { "id": "A", "text": "Vroom" },
+      { "id": "B", "text": "Hull" },
+      { "id": "C", "text": "Murray" },
+      { "id": "D", "text": "None of the given" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Psychology",
+    "topic": "Motivation Theories",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_47",
+    "questionNumber": 47,
+    "stem": "An example of ___ is thinking, “If I work hard I can achieve the targets my boss has set for me”.",
+    "options": [
+      { "id": "A", "text": "purposeful" },
+      { "id": "B", "text": "valence" },
+      { "id": "C", "text": "instrumentality" },
+      { "id": "D", "text": "expectancy" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Motivation Theories",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_48",
+    "questionNumber": 48,
+    "stem": "In SMART goals, T stands for ___.",
+    "options": [
+      { "id": "A", "text": "Temporary" },
+      { "id": "B", "text": "Time-based" },
+      { "id": "C", "text": "Tough" },
+      { "id": "D", "text": "Testing" }
+    ],
+    "correctAnswer": "B",
+    "subject": "Psychology",
+    "topic": "Motivation Theories",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_49",
+    "questionNumber": 49,
+    "stem": "Friendship is a ___ need in Maslow’s hierarchy.",
+    "options": [
+      { "id": "A", "text": "Love and belonging" },
+      { "id": "B", "text": "Esteem" },
+      { "id": "C", "text": "Physiological" },
+      { "id": "D", "text": "Safety" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Psychology",
+    "topic": "Motivation Theories",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_50",
+    "questionNumber": 50,
+    "stem": "___ theory differentiates between autonomous motivation and controlled motivation.",
+    "options": [
+      { "id": "A", "text": "Arousal" },
+      { "id": "B", "text": "Goal-setting" },
+      { "id": "C", "text": "Need hierarchy" },
+      { "id": "D", "text": "Self-determination" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Motivation Theories",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_51",
+    "questionNumber": 51,
+    "stem": "According to Daniel Goleman, ___ component of emotional intelligence focuses on how we handle relationships with others.",
+    "options": [
+      { "id": "A", "text": "self-awareness" },
+      { "id": "B", "text": "motivation" },
+      { "id": "C", "text": "empathy" },
+      { "id": "D", "text": "emotional regulation" }
+    ],
+    "correctAnswer": "C",
+    "subject": "Psychology",
+    "topic": "Emotional Intelligence",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_52",
+    "questionNumber": 52,
+    "stem": "Emotional intelligence can be considered a type of ___ intelligence.",
+    "options": [
+      { "id": "A", "text": "academic" },
+      { "id": "B", "text": "genetic" },
+      { "id": "C", "text": "social" },
+      { "id": "D", "text": "external" }
+    ],
+    "correctAnswer": "C",
+    "subject": "Psychology",
+    "topic": "Emotional Intelligence",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_53",
+    "questionNumber": 53,
+    "stem": "Noticing a difficult emotion and slowing down or resisting any impulsive action that may follow highlights ___ component of emotional intelligence.",
+    "options": [
+      { "id": "A", "text": "Self-regulation" },
+      { "id": "B", "text": "Motivation" },
+      { "id": "C", "text": "Emotional literacy" },
+      { "id": "D", "text": "Empathy" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Psychology",
+    "topic": "Emotional Intelligence",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_54",
+    "questionNumber": 54,
+    "stem": "The following are signs of emotional intelligence, except ___.",
+    "options": [
+      { "id": "A", "text": "strong sense of curiosity" },
+      { "id": "B", "text": "holding onto mistakes" },
+      { "id": "C", "text": "ability to manage emotions in difficult situations" },
+      { "id": "D", "text": "self-confidence" }
+    ],
+    "correctAnswer": "B",
+    "subject": "Psychology",
+    "topic": "Emotional Intelligence",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_55",
+    "questionNumber": 55,
+    "stem": "Perceiving emotions means ___.",
+    "options": [
+      { "id": "A", "text": "Ignoring signals" },
+      { "id": "B", "text": "Understanding only what somebody is saying to you" },
+      { "id": "C", "text": "Understanding only somebody’s facial expression" },
+      { "id": "D", "text": "Understanding both verbal and nonverbal signals" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Emotional Intelligence",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_56",
+    "questionNumber": 56,
+    "stem": "___ suggests that 10 distinct components provide the scaffolding of emotionally and socially intelligent behaviors:",
+    "options": [
+      { "id": "A", "text": "Bar-On" },
+      { "id": "B", "text": "Goleman" },
+      { "id": "C", "text": "Salovey" },
+      { "id": "D", "text": "Mayer" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Psychology",
+    "topic": "Emotional Intelligence",
+    "difficulty": "hard",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_57",
+    "questionNumber": 57,
+    "stem": "Which of the following is a facilitator of EQ?",
+    "options": [
+      { "id": "A", "text": "optimism" },
+      { "id": "B", "text": "happiness" },
+      { "id": "C", "text": "independence" },
+      { "id": "D", "text": "all of the given" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Psychology",
+    "topic": "Emotional Intelligence",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_58",
+    "questionNumber": 58,
+    "stem": "___ is a strategy for improving one’s self-awareness.",
+    "options": [
+      { "id": "A", "text": "rejecting feedback" },
+      { "id": "B", "text": "using critical self-talk daily" },
+      { "id": "C", "text": "developing a fixed mindset" },
+      { "id": "D", "text": "pursuing one’s passion" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Emotional Intelligence",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_59",
+    "questionNumber": 59,
+    "stem": "Having students create autobiographies is an example of creating opportunities for ___.",
+    "options": [
+      { "id": "A", "text": "emotional labor" },
+      { "id": "B", "text": "emotional contagion" },
+      { "id": "C", "text": "metacognition" },
+      { "id": "D", "text": "none of the given" }
+    ],
+    "correctAnswer": "C",
+    "subject": "Psychology",
+    "topic": "Emotional Intelligence",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_60",
+    "questionNumber": 60,
+    "stem": "Which of the following is not true about management of emotions?",
+    "options": [
+      { "id": "A", "text": "It is essentially a private act" },
+      { "id": "B", "text": "It is directly regulated by others" },
+      { "id": "C", "text": "It is influenced by cultural norms" },
+      { "id": "D", "text": "It is influenced by what society defines as appropriate to feel and express" }
+    ],
+    "correctAnswer": "B",
+    "subject": "Psychology",
+    "topic": "Emotional Intelligence",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_61",
+    "questionNumber": 61,
+    "stem": "Which of the following is false about learning according to Gagne’s definition?",
+    "options": [
+      { "id": "A", "text": "It is a change in human disposition" },
+      { "id": "B", "text": "It persists over a period of time" },
+      { "id": "C", "text": "It is simply ascribable to processes of growth" },
+      { "id": "D", "text": "None of the above" }
+    ],
+    "correctAnswer": "C",
+    "subject": "Psychology",
+    "topic": "Instructional Models & Gagne",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_62",
+    "questionNumber": 62,
+    "stem": "Manual or physical skills come under ___ component of Bloom’s taxonomy.",
+    "options": [
+      { "id": "A", "text": "Cognitive" },
+      { "id": "B", "text": "Affective" },
+      { "id": "C", "text": "Psychomotor" },
+      { "id": "D", "text": "Physical" }
+    ],
+    "correctAnswer": "C",
+    "subject": "Psychology",
+    "topic": "Instructional Models & Gagne",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_63",
+    "questionNumber": 63,
+    "stem": "Reflection, learning and education was explored by ___.",
+    "options": [
+      { "id": "A", "text": "Carl Rogers" },
+      { "id": "B", "text": "John Watson" },
+      { "id": "C", "text": "Benjamin Bloom" },
+      { "id": "D", "text": "John Dewey" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Instructional Models & Gagne",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_64",
+    "questionNumber": 64,
+    "stem": "The principles of ___ refer to how close in time two events must be for a bond to be formed.",
+    "options": [
+      { "id": "A", "text": "behavior" },
+      { "id": "B", "text": "reinforcement" },
+      { "id": "C", "text": "repetition" },
+      { "id": "D", "text": "contiguity" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Instructional Models & Gagne",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_65",
+    "questionNumber": 65,
+    "stem": "___ gives information to learners about their success or failure concerning the task at hand.",
+    "options": [
+      { "id": "A", "text": "Cognitive feedback" },
+      { "id": "B", "text": "Emotional feedback" },
+      { "id": "C", "text": "Reinforcement" },
+      { "id": "D", "text": "Physical feedback" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Psychology",
+    "topic": "Instructional Models & Gagne",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_66",
+    "questionNumber": 66,
+    "stem": "The ___ orientation to learning has a quality of personal involvement—the whole person in both feeling and cognitive aspects being in the learning event.",
+    "options": [
+      { "id": "A", "text": "behavioral" },
+      { "id": "B", "text": "cognitive" },
+      { "id": "C", "text": "humanistic" },
+      { "id": "D", "text": "social" }
+    ],
+    "correctAnswer": "C",
+    "subject": "Psychology",
+    "topic": "Instructional Models & Gagne",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_67",
+    "questionNumber": 67,
+    "stem": "Learning through play is ___ learning.",
+    "options": [
+      { "id": "A", "text": "primary" },
+      { "id": "B", "text": "secondary" },
+      { "id": "C", "text": "passive" },
+      { "id": "D", "text": "active" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Instructional Models & Gagne",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_68",
+    "questionNumber": 68,
+    "stem": "People with ___ learning style are prone to sorting their ideas after speaking, rather than thinking ideas through before.",
+    "options": [
+      { "id": "A", "text": "logical" },
+      { "id": "B", "text": "solitary" },
+      { "id": "C", "text": "visual" },
+      { "id": "D", "text": "auditory" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Instructional Models & Gagne",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_69",
+    "questionNumber": 69,
+    "stem": "Which of the following statements is false?",
+    "options": [
+      { "id": "A", "text": "Effective instruction is static" },
+      { "id": "B", "text": "Effective instruction is eclectic" },
+      { "id": "C", "text": "Effective instruction is generative" },
+      { "id": "D", "text": "Effective instruction is interactive" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Psychology",
+    "topic": "Instructional Models & Gagne",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_70",
+    "questionNumber": 70,
+    "stem": "In ADDIE model, I stand for ___.",
+    "options": [
+      { "id": "A", "text": "instruction" },
+      { "id": "B", "text": "implementation" },
+      { "id": "C", "text": "integration" },
+      { "id": "D", "text": "induction" }
+    ],
+    "correctAnswer": "B",
+    "subject": "Psychology",
+    "topic": "Instructional Models & Gagne",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_71",
+    "questionNumber": 71,
+    "stem": "The word ‘pedagogy’ has been derived from the ___ word “pedagogue”.",
+    "options": [
+      { "id": "A", "text": "Latin" },
+      { "id": "B", "text": "Sanskrit" },
+      { "id": "C", "text": "Greek" },
+      { "id": "D", "text": "English" }
+    ],
+    "correctAnswer": "C",
+    "subject": "Education",
+    "topic": "Pedagogical Theory",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_72",
+    "questionNumber": 72,
+    "stem": "Which of the following statements is not true about pedagogy?",
+    "options": [
+      { "id": "A", "text": "It is a method or way of teaching" },
+      { "id": "B", "text": "It is derived from the Greek word “pedagogue”" },
+      { "id": "C", "text": "It helps a teacher understand how learning should be facilitated." },
+      { "id": "D", "text": "It harms the quality of teaching and learning." }
+    ],
+    "correctAnswer": "D",
+    "subject": "Education",
+    "topic": "Pedagogical Theory",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_73",
+    "questionNumber": 73,
+    "stem": "Pedagogy can enhance the student-teacher relationship.",
+    "options": [
+      { "id": "A", "text": "True" },
+      { "id": "B", "text": "False" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Education",
+    "topic": "Pedagogical Theory",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_74",
+    "questionNumber": 74,
+    "stem": "___ learning is based on the model that knowledge can be created within a population where members actively interact by sharing experiences and take on asymmetry roles.",
+    "options": [
+      { "id": "A", "text": "integrative" },
+      { "id": "B", "text": "inquiry-based" },
+      { "id": "C", "text": "collaborative" },
+      { "id": "D", "text": "constructivist" }
+    ],
+    "correctAnswer": "C",
+    "subject": "Education",
+    "topic": "Pedagogical Theory",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_75",
+    "questionNumber": 75,
+    "stem": "The Pedagogical Model provides an overview of the learning cycle and breaks it down into ___ domains or phases of instruction.",
+    "options": [
+      { "id": "A", "text": "five" },
+      { "id": "B", "text": "three" },
+      { "id": "C", "text": "two" },
+      { "id": "D", "text": "seven" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Education",
+    "topic": "Pedagogical Theory",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_76",
+    "questionNumber": 76,
+    "stem": "Which of the following is not a type of inquiry-based approach?",
+    "options": [
+      { "id": "A", "text": "confrontation" },
+      { "id": "B", "text": "structure" },
+      { "id": "C", "text": "guided" },
+      { "id": "D", "text": "open" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Education",
+    "topic": "Pedagogical Theory",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_77",
+    "questionNumber": 77,
+    "stem": "In experiential learning, students are engaged ___.",
+    "options": [
+      { "id": "A", "text": "intellectually" },
+      { "id": "B", "text": "soulfully" },
+      { "id": "C", "text": "socially" },
+      { "id": "D", "text": "all of the given" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Education",
+    "topic": "Pedagogical Theory",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_78",
+    "questionNumber": 78,
+    "stem": "___ stage of experiential theory by Kolb focuses on planning.",
+    "options": [
+      { "id": "A", "text": "concrete experience" },
+      { "id": "B", "text": "abstract conceptualization" },
+      { "id": "C", "text": "reflective observation" },
+      { "id": "D", "text": "active experimentation" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Education",
+    "topic": "Pedagogical Theory",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_79",
+    "questionNumber": 79,
+    "stem": "People with a ___ learning style can often act on “gut feeling” and will rely on others' analysis rather than their own.",
+    "options": [
+      { "id": "A", "text": "accommodating" },
+      { "id": "B", "text": "converging" },
+      { "id": "C", "text": "diverging" },
+      { "id": "D", "text": "assimilating" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Education",
+    "topic": "Pedagogical Theory",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_80",
+    "questionNumber": 80,
+    "stem": "According to the ___ principle, students learn better from animation and narration than from animation and on-screen text.",
+    "options": [
+      { "id": "A", "text": "multimedia" },
+      { "id": "B", "text": "modality" },
+      { "id": "C", "text": "coherence" },
+      { "id": "D", "text": "temporal contiguity" }
+    ],
+    "correctAnswer": "B",
+    "subject": "Education",
+    "topic": "Pedagogical Theory",
+    "difficulty": "hard",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_81",
+    "questionNumber": 81,
+    "stem": "E-learning is any form of ___.",
+    "options": [
+      { "id": "A", "text": "teaching" },
+      { "id": "B", "text": "training" },
+      { "id": "C", "text": "tutoring" },
+      { "id": "D", "text": "all of the given" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Education",
+    "topic": "E-Learning & Digital Learning",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_82",
+    "questionNumber": 82,
+    "stem": "___ is a feature of e-learning.",
+    "options": [
+      { "id": "A", "text": "difficulty in access" },
+      { "id": "B", "text": "user friendliness" },
+      { "id": "C", "text": "social injustice" },
+      { "id": "D", "text": "closed learning" }
+    ],
+    "correctAnswer": "B",
+    "subject": "Education",
+    "topic": "E-Learning & Digital Learning",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_83",
+    "questionNumber": 83,
+    "stem": "E-learning is a synonym of audio-visual learning, multimedia learning, and distance learning.",
+    "options": [
+      { "id": "A", "text": "True" },
+      { "id": "B", "text": "False" }
+    ],
+    "correctAnswer": "B",
+    "subject": "Education",
+    "topic": "E-Learning & Digital Learning",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_84",
+    "questionNumber": 84,
+    "stem": "Which of the following is not a type of e-learning?",
+    "options": [
+      { "id": "A", "text": "text-driven" },
+      { "id": "B", "text": "interactive" },
+      { "id": "C", "text": "simulation" },
+      { "id": "D", "text": "physical" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Education",
+    "topic": "E-Learning & Digital Learning",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_85",
+    "questionNumber": 85,
+    "stem": "Which of the following is not a benefit of e-learning?",
+    "options": [
+      { "id": "A", "text": "It can accommodate the need of a housewife" },
+      { "id": "B", "text": "People can revise the learning content as many times as they want" },
+      { "id": "C", "text": "It facilitates in developing and communicating new training policies" },
+      { "id": "D", "text": "None of the given" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Education",
+    "topic": "E-Learning & Digital Learning",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_86",
+    "questionNumber": 86,
+    "stem": "Good learners know ___.",
+    "options": [
+      { "id": "A", "text": "What they are learning" },
+      { "id": "B", "text": "Why they are learning" },
+      { "id": "C", "text": "How they are learning" },
+      { "id": "D", "text": "All of the given" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Education",
+    "topic": "E-Learning & Digital Learning",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_87",
+    "questionNumber": 87,
+    "stem": "Learners may multitask when engaging in an online course, which could be resulting in ___.",
+    "options": [
+      { "id": "A", "text": "hyperfocus" },
+      { "id": "B", "text": "better retrieval" },
+      { "id": "C", "text": "shorter attention spans" },
+      { "id": "D", "text": "None of the given" }
+    ],
+    "correctAnswer": "C",
+    "subject": "Education",
+    "topic": "E-Learning & Digital Learning",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_88",
+    "questionNumber": 88,
+    "stem": "___ learning is the crucial determinant of successful e-learning.",
+    "options": [
+      { "id": "A", "text": "passive" },
+      { "id": "B", "text": "retrospective" },
+      { "id": "C", "text": "social" },
+      { "id": "D", "text": "active" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Education",
+    "topic": "E-Learning & Digital Learning",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_89",
+    "questionNumber": 89,
+    "stem": "The brain can process 36,000 visual cues per___.",
+    "options": [
+      { "id": "A", "text": "hour" },
+      { "id": "B", "text": "second" },
+      { "id": "C", "text": "day" },
+      { "id": "D", "text": "year" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Education",
+    "topic": "E-Learning & Digital Learning",
+    "difficulty": "hard",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_90",
+    "questionNumber": 90,
+    "stem": "For effective learning, online courses should ___.",
+    "options": [
+      { "id": "A", "text": "use headings" },
+      { "id": "B", "text": "use complex language" },
+      { "id": "C", "text": "present long pieces of text" },
+      { "id": "D", "text": "use random images" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Education",
+    "topic": "E-Learning & Digital Learning",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_91",
+    "questionNumber": 91,
+    "stem": "During Covid-19 the world was busy in preparing 1.5 billion learners for the new normal, i.e., ___ learning.",
+    "options": [
+      { "id": "A", "text": "ineffective" },
+      { "id": "B", "text": "physical" },
+      { "id": "C", "text": "remote" },
+      { "id": "D", "text": "experiential" }
+    ],
+    "correctAnswer": "C",
+    "subject": "Education",
+    "topic": "Remote Learning & Assessment",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_92",
+    "questionNumber": 92,
+    "stem": "To develop learner readiness for online learning, training sessions on ___ are helpful.",
+    "options": [
+      { "id": "A", "text": "netiquettes" },
+      { "id": "B", "text": "time management" },
+      { "id": "C", "text": "developing study skills" },
+      { "id": "D", "text": "all of the given" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Education",
+    "topic": "Remote Learning & Assessment",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_93",
+    "questionNumber": 93,
+    "stem": "The typical picture of a teacher being a dispenser of knowledge to the students has been replaced by that of a ___.",
+    "options": [
+      { "id": "A", "text": "obstructor" },
+      { "id": "B", "text": "parent" },
+      { "id": "C", "text": "friend" },
+      { "id": "D", "text": "facilitator" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Education",
+    "topic": "Remote Learning & Assessment",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_94",
+    "questionNumber": 94,
+    "stem": "In 2018, Global Education and Skills Forum noted that the ‘future’ teacher would need the 5 skills to thrive in the 21st century. Which of the following is not one of them?",
+    "options": [
+      { "id": "A", "text": "Strong social skills" },
+      { "id": "B", "text": "Data analysis" },
+      { "id": "C", "text": "External focus" },
+      { "id": "D", "text": "Strictness" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Education",
+    "topic": "Remote Learning & Assessment",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_95",
+    "questionNumber": 95,
+    "stem": "Participatory education demands ___ so as to build a needs-based approach to teaching.",
+    "options": [
+      { "id": "A", "text": "creativity" },
+      { "id": "B", "text": "stubbornness" },
+      { "id": "C", "text": "reward" },
+      { "id": "D", "text": "none of the given" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Education",
+    "topic": "Remote Learning & Assessment",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_96",
+    "questionNumber": 96,
+    "stem": "Students who consider intelligence as a malleable entity tend to focus on their obstacles instead of goals.",
+    "options": [
+      { "id": "A", "text": "True" },
+      { "id": "B", "text": "False" }
+    ],
+    "correctAnswer": "B",
+    "subject": "Education",
+    "topic": "Remote Learning & Assessment",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_97",
+    "questionNumber": 97,
+    "stem": "Which of the following is not a principle to enhance student learning.",
+    "options": [
+      { "id": "A", "text": "What students already know affects their learning" },
+      { "id": "B", "text": "Learning is context-based" },
+      { "id": "C", "text": "Students’ cognitive development and learning is limited by the general stages of development." },
+      { "id": "D", "text": "The acquisition of knowledge and skills in the long term depends largely on practice." }
+    ],
+    "correctAnswer": "C",
+    "subject": "Education",
+    "topic": "Remote Learning & Assessment",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_98",
+    "questionNumber": 98,
+    "stem": "___ feedback to students is important for learning.",
+    "options": [
+      { "id": "A", "text": "Unclear" },
+      { "id": "B", "text": "Late" },
+      { "id": "C", "text": "Harsh" },
+      { "id": "D", "text": "Explanatory" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Education",
+    "topic": "Remote Learning & Assessment",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_99",
+    "questionNumber": 99,
+    "stem": "Mastery goals are those that are geared towards the acquisition or improvement of___.",
+    "options": [
+      { "id": "A", "text": "Skills" },
+      { "id": "B", "text": "Number of students in a classroom" },
+      { "id": "C", "text": "Teacher feedback" },
+      { "id": "D", "text": "None of the given" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Education",
+    "topic": "Remote Learning & Assessment",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_100",
+    "questionNumber": 100,
+    "stem": "The vast majority of formative assessment is___.",
+    "options": [
+      { "id": "A", "text": "Formal" },
+      { "id": "B", "text": "Incorrect" },
+      { "id": "C", "text": "Written" },
+      { "id": "D", "text": "informal" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Education",
+    "topic": "Remote Learning & Assessment",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_101",
+    "questionNumber": 101,
+    "stem": "Social cognition has a protracted development through infancy to ___.",
+    "options": [
+      { "id": "A", "text": "teenage" },
+      { "id": "B", "text": "old-age" },
+      { "id": "C", "text": "adulthood" },
+      { "id": "D", "text": "death" }
+    ],
+    "correctAnswer": "C",
+    "subject": "Psychology",
+    "topic": "Social Cognition & Development",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_102",
+    "questionNumber": 102,
+    "stem": "Which of the following abilities comes under social cognition?",
+    "options": [
+      { "id": "A", "text": "Face processing" },
+      { "id": "B", "text": "Joint attention" },
+      { "id": "C", "text": "Theory of mind" },
+      { "id": "D", "text": "All of the given" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Social Cognition & Development",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_103",
+    "questionNumber": 103,
+    "stem": "Under social cognition, abilities involved in affective processing are often called ___.",
+    "options": [
+      { "id": "A", "text": "hot" },
+      { "id": "B", "text": "cold" },
+      { "id": "C", "text": "white" },
+      { "id": "D", "text": "black" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Psychology",
+    "topic": "Social Cognition & Development",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_104",
+    "questionNumber": 104,
+    "stem": "Social schemas refer to people's mental representations of social ___.",
+    "options": [
+      { "id": "A", "text": "values" },
+      { "id": "B", "text": "memories" },
+      { "id": "C", "text": "skills" },
+      { "id": "D", "text": "patterns" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Social Cognition & Development",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_105",
+    "questionNumber": 105,
+    "stem": "During the earliest stages of development, children are very ___-centric. They see the world from their own perspective and struggle to think about how other people may view the world.",
+    "options": [
+      { "id": "A", "text": "selfish" },
+      { "id": "B", "text": "ego" },
+      { "id": "C", "text": "conscious" },
+      { "id": "D", "text": "emotional" }
+    ],
+    "correctAnswer": "B",
+    "subject": "Psychology",
+    "topic": "Social Cognition & Development",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_106",
+    "questionNumber": 106,
+    "stem": "A theory of mind refers to a person's ability to understand and think about the ___ of other people.",
+    "options": [
+      { "id": "A", "text": "behaviors" },
+      { "id": "B", "text": "family backgrounds" },
+      { "id": "C", "text": "mental states" },
+      { "id": "D", "text": "language" }
+    ],
+    "correctAnswer": "C",
+    "subject": "Psychology",
+    "topic": "Social Cognition & Development",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_107",
+    "questionNumber": 107,
+    "stem": "The same social behavior in one cultural setting might have a very different meaning and interpretation if it were to occur or be observed in another culture.",
+    "options": [
+      { "id": "A", "text": "True" },
+      { "id": "B", "text": "False" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Psychology",
+    "topic": "Social Cognition & Development",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_108",
+    "questionNumber": 108,
+    "stem": "Social cognitive theory by Bandura focuses on concepts of ___.",
+    "options": [
+      { "id": "A", "text": "self-efficacy" },
+      { "id": "B", "text": "modeling" },
+      { "id": "C", "text": "observational learning" },
+      { "id": "D", "text": "all of the given" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Social Cognition & Development",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_109",
+    "questionNumber": 109,
+    "stem": "The central tenet of Bandura’s social-cognitive theory is that people seek to develop a sense of ___ over the important events in their lives.",
+    "options": [
+      { "id": "A", "text": "agency" },
+      { "id": "B", "text": "dependency" },
+      { "id": "C", "text": "attachment" },
+      { "id": "D", "text": "emotion" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Psychology",
+    "topic": "Social Cognition & Development",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_110",
+    "questionNumber": 110,
+    "stem": "___ hypothesis suggests that social processes influence how information is selected, organized, integrated, and retrieved.",
+    "options": [
+      { "id": "A", "text": "activation" },
+      { "id": "B", "text": "cognitive influence" },
+      { "id": "C", "text": "interaction" },
+      { "id": "D", "text": "social cue strength" }
+    ],
+    "correctAnswer": "B",
+    "subject": "Psychology",
+    "topic": "Social Cognition & Development",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_111",
+    "questionNumber": 111,
+    "stem": "Sustainability in economic sustainability is ___.",
+    "options": [
+      { "id": "A", "text": "multidimensional" },
+      { "id": "B", "text": "bidimensional" },
+      { "id": "C", "text": "unidimensional" },
+      { "id": "D", "text": "none of the given" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Social Studies",
+    "topic": "Sustainable Development & ESD",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_112",
+    "questionNumber": 112,
+    "stem": "The term \"sustainable development\" was first mentioned in a book related to the 1972 UN Stockholm conference on ___.",
+    "options": [
+      { "id": "A", "text": "water" },
+      { "id": "B", "text": "poverty" },
+      { "id": "C", "text": "economic crisis" },
+      { "id": "D", "text": "human environment" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Social Studies",
+    "topic": "Sustainable Development & ESD",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_113",
+    "questionNumber": 113,
+    "stem": "Environmental sustainability focuses on impacts of processes, products and services on ___.",
+    "options": [
+      { "id": "A", "text": "water" },
+      { "id": "B", "text": "biodiversity" },
+      { "id": "C", "text": "human health" },
+      { "id": "D", "text": "all of the given" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Social Studies",
+    "topic": "Sustainable Development & ESD",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_114",
+    "questionNumber": 114,
+    "stem": "Which of the following does not come under social sustainability?",
+    "options": [
+      { "id": "A", "text": "Labour practices" },
+      { "id": "B", "text": "Revenue generation" },
+      { "id": "C", "text": "Human rights" },
+      { "id": "D", "text": "Business ethics" }
+    ],
+    "correctAnswer": "B",
+    "subject": "Social Studies",
+    "topic": "Sustainable Development & ESD",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_115",
+    "questionNumber": 115,
+    "stem": "SDG __ focuses on clean water and sanitation.",
+    "options": [
+      { "id": "A", "text": "1" },
+      { "id": "B", "text": "17" },
+      { "id": "C", "text": "6" },
+      { "id": "D", "text": "3" }
+    ],
+    "correctAnswer": "C",
+    "subject": "Social Studies",
+    "topic": "Sustainable Development & ESD",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_116",
+    "questionNumber": 116,
+    "stem": "SDG 16 focuses on ___.",
+    "options": [
+      { "id": "A", "text": "No poverty" },
+      { "id": "B", "text": "No hunger" },
+      { "id": "C", "text": "Good health" },
+      { "id": "D", "text": "Peace and justice" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Social Studies",
+    "topic": "Sustainable Development & ESD",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_117",
+    "questionNumber": 117,
+    "stem": "On 20 October 2020, the Higher Education Sustainability Initiative (HESI) raised the flag of higher education as a driver for sustainable development and inclusive societies on the first day of the ___ 2020.",
+    "options": [
+      { "id": "A", "text": "National Sustainability Meeting" },
+      { "id": "B", "text": "National Teachers Meeting" },
+      { "id": "C", "text": "Global Childrens’ Meeting" },
+      { "id": "D", "text": "Global Education Meeting" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Social Studies",
+    "topic": "Sustainable Development & ESD",
+    "difficulty": "hard",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_118",
+    "questionNumber": 118,
+    "stem": "Education is related to all SDGs.",
+    "options": [
+      { "id": "A", "text": "True" },
+      { "id": "B", "text": "False" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Social Studies",
+    "topic": "Sustainable Development & ESD",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_119",
+    "questionNumber": 119,
+    "stem": "Successful implementation of ESD requires a shift in focus from ___.",
+    "options": [
+      { "id": "A", "text": "teaching to learning" },
+      { "id": "B", "text": "learning to teaching" },
+      { "id": "C", "text": "reading to speaking" },
+      { "id": "D", "text": "knowing to ignoring" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Social Studies",
+    "topic": "Sustainable Development & ESD",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_120",
+    "questionNumber": 120,
+    "stem": "___ competency is the ability to reflect on one’s own role in the local community and (global) society.",
+    "options": [
+      { "id": "A", "text": "collaboration" },
+      { "id": "B", "text": "self-awareness" },
+      { "id": "C", "text": "strategic" },
+      { "id": "D", "text": "normative" }
+    ],
+    "correctAnswer": "B",
+    "subject": "Social Studies",
+    "topic": "Sustainable Development & ESD",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_121",
+    "questionNumber": 121,
+    "stem": "Simon defined learning as changes in a system that result in ___ over time on tasks similar to those done previously.",
+    "options": [
+      { "id": "A", "text": "boredom" },
+      { "id": "B", "text": "decreased anxiety" },
+      { "id": "C", "text": "improved performance" },
+      { "id": "D", "text": "reduced performance" }
+    ],
+    "correctAnswer": "C",
+    "subject": "Psychology",
+    "topic": "Learning Definitions & Orientations",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_122",
+    "questionNumber": 122,
+    "stem": "Robert Gagne defined learning as ___.",
+    "options": [
+      { "id": "A", "text": "a change in human disposition or capacity" },
+      { "id": "B", "text": "a change that persists over a period of time" },
+      { "id": "C", "text": "a change not simply ascribable to processes of growth" },
+      { "id": "D", "text": "all of the given" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Learning Definitions & Orientations",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_123",
+    "questionNumber": 123,
+    "stem": "Psychomotor skills are ___ skills.",
+    "options": [
+      { "id": "A", "text": "cognitive" },
+      { "id": "B", "text": "spiritual" },
+      { "id": "C", "text": "mental" },
+      { "id": "D", "text": "physical" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Learning Definitions & Orientations",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_124",
+    "questionNumber": 124,
+    "stem": "Returning to experience refers to ___.",
+    "options": [
+      { "id": "A", "text": "attending to feelings" },
+      { "id": "B", "text": "re-examining experience in the light of one’s intent and existing knowledge" },
+      { "id": "C", "text": "using helpful feelings and removing obstructive ones" },
+      { "id": "D", "text": "recalling or detailing salient events" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Learning Definitions & Orientations",
+    "difficulty": "medium",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_125",
+    "questionNumber": 125,
+    "stem": "Which of the following assumptions does not come under the behaviorist orientation to learning?",
+    "options": [
+      { "id": "A", "text": "Differences between individuals are important as they will affect learning" },
+      { "id": "B", "text": "Observable behavior rather than internal thought processes are the focus of study." },
+      { "id": "C", "text": "Environment shapes one’s behavior" },
+      { "id": "D", "text": "The principle of contiguity is central" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Psychology",
+    "topic": "Learning Definitions & Orientations",
+    "difficulty": "hard",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_126",
+    "questionNumber": 126,
+    "stem": "Reinforcement can come through sharing of results rather than a reward.",
+    "options": [
+      { "id": "A", "text": "True" },
+      { "id": "B", "text": "False" }
+    ],
+    "correctAnswer": "A",
+    "subject": "Psychology",
+    "topic": "Learning Definitions & Orientations",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_127",
+    "questionNumber": 127,
+    "stem": "___ has contributed to the humanistic orientations to learning.",
+    "options": [
+      { "id": "A", "text": "linguistic" },
+      { "id": "B", "text": "kinesthetic" },
+      { "id": "C", "text": "visual" },
+      { "id": "D", "text": "Carl Rogers" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Learning Definitions & Orientations",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_128",
+    "questionNumber": 128,
+    "stem": "In the process of learning, which of the following is not a component of output?",
+    "options": [
+      { "id": "A", "text": "certification" },
+      { "id": "B", "text": "attitude change" },
+      { "id": "C", "text": "knowledge enhancement" },
+      { "id": "D", "text": "training plan" }
+    ],
+    "correctAnswer": "D",
+    "subject": "Psychology",
+    "topic": "Learning Definitions & Orientations",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_129",
+    "questionNumber": 129,
+    "stem": "Ambience, space and decorum do not affect learning.",
+    "options": [
+      { "id": "A", "text": "True" },
+      { "id": "B", "text": "False" }
+    ],
+    "correctAnswer": "B",
+    "subject": "Psychology",
+    "topic": "Learning Definitions & Orientations",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  },
+  {
+    "id": "q_130",
+    "questionNumber": 130,
+    "stem": "Role-playing can motivate ___ type of learners effectively.",
+    "options": [
+      { "id": "A", "text": "solitary" },
+      { "id": "B", "text": "social" },
+      { "id": "C", "text": "reading/writing" },
+      { "id": "D", "text": "logical/analytical" }
+    ],
+    "correctAnswer": "B",
+    "subject": "Psychology",
+    "topic": "Learning Definitions & Orientations",
+    "difficulty": "easy",
+    "marks": 1,
+    "explanation": ""
+  }
+]

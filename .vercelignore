@@ -1,0 +1,26 @@
+# Git & IDE
+.git
+.github
+.vscode
+.idea
+
+# Local environment & caches
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test files and coverage
+server/test/
+coverage/
+*.test.js
+*.test.jsx
+
+# Documentation and design walkthroughs
+*.png
+*.webp
+redesign_walkthrough.md

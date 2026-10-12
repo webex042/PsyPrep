@@ -1,0 +1,49 @@
+{
+  "name": "psyprep",
+  "version": "1.0.0",
+  "description": "Production-grade MERN Computer-Based Testing (CBT) & mock exam platform tailored for NPTEL Psychology of Learning, featuring Swiss Grid aesthetics, server-authoritative timer, and Recharts analytics.",
+  "private": true,
+  "type": "module",
+  "keywords": [
+    "cbt",
+    "mock-test",
+    "quiz-app",
+    "mern",
+    "react",
+    "mongodb",
+    "nptel",
+    "psychology-of-learning",
+    "swiss-grid",
+    "serverless"
+  ],
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=server\" \"npm run dev --workspace=client\"",
+    "dev:server": "npm run dev --workspace=server",
+    "dev:client": "npm run dev --workspace=client",
+    "build": "npm run build --workspace=client",
+    "test": "npm run test --workspace=server && npm run test --workspace=client",
+    "test:server": "npm run test --workspace=server",
+    "test:client": "npm run test --workspace=client",
+    "seed": "npm run seed --workspace=server"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "csv-parse": "^5.6.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.5",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
