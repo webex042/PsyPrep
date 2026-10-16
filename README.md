@@ -143,15 +143,15 @@ npm run build
 
 ---
 
-## ☁️ Vercel Deployment Guide (Multi-Service Project)
+## ☁️ Vercel Deployment Guide
 
-This project is configured out-of-the-box for multi-service deployment on [Vercel](https://vercel.com):
+This project is configured out-of-the-box for unified fullstack deployment on [Vercel](https://vercel.com):
 
 ### 1. Import Repository to Vercel
 1. Push your code to GitHub (`origin/main`).
 2. In your Vercel Dashboard, click **Add New Project** → **Import** your repository (`PsyPrep`).
 3. Keep the **Root Directory** as `./`.
-4. Vercel automatically detects the multi-service architecture from [`vercel.json`](file:///vercel.json) (`client` via Vite, `server` via Express).
+4. Framework Preset can be kept as **Other** (or Vite). Build Command (`npm run build`) and Output Directory (`client/dist`) are auto-configured by [`vercel.json`](file:///vercel.json).
 
 ### 2. Configure Environment Variables in Vercel
 In **Project Settings → Environment Variables**, add:
@@ -164,7 +164,7 @@ In **Project Settings → Environment Variables**, add:
 | `CRON_SECRET` | Secret key for authenticating Vercel Crons | `your-cron-secret-string` |
 | `CLIENT_ORIGIN` *(Optional)* | Allowed origin for CORS (defaults to request origin) | `https://your-project.vercel.app` |
 
-### 3. Initialize Production Database (130 Questions & Demo Accounts)
+### 3. Initialize Production Database (140 Questions & Demo Accounts)
 Once deployed on Vercel, populate your empty MongoDB Atlas cluster using either:
 - **Option A (Browser Console):** Log in as Teacher (`teacher@psyprep.edu` / `Password123!`), open the **Faculty Management Hub**, and click **"Seed / Re-sync Questions"**.
 - **Option B (HTTP Request / cURL):**
@@ -174,10 +174,10 @@ Once deployed on Vercel, populate your empty MongoDB Atlas cluster using either:
   ```
   *(Note: If the database is completely empty, the `/api/quizzes/seed` endpoint automatically allows initial seeding without authentication).*
 
-### 4. Vercel Services Architecture & Crons
-- **Client Service (`client`):** React SPA built with Vite into static assets served on `/(.*)`.
-- **Server Service (`server`):** Express backend serving API endpoints on `/api` and `/api/(.*)`.
-- **Automated Expiration Cron:** Vercel Cron invokes `/api/attempts/finalize-expired` every minute using the schedule in `vercel.json` to sweep and grade any expired attempts in the background.
+### 4. Vercel Architecture & Crons
+- **Frontend SPA (`client`):** React SPA built with Vite into static assets in `client/dist` served on `/(.*)`.
+- **Backend API (`api/index.js`):** Production Express application running seamlessly as a Vercel Serverless Function, serving API endpoints on `/api` and `/api/(.*)`.
+- **Automated Expiration Cron:** Vercel Cron invokes `/api/attempts/finalize-expired` (supports both `GET` and `POST`) daily to sweep and grade any expired attempts in the background, in full compliance with Vercel Hobby and Pro tier cron constraints. (Additionally, client access triggers real-time lazy finalization).
 
 ---
 

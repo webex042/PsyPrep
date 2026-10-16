@@ -1,39 +1,31 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "services": {
-    "client": {
-      "root": "client",
-      "framework": "vite"
-    },
-    "server": {
-      "root": "server",
-      "framework": "express"
+  "buildCommand": "npm run build",
+  "outputDirectory": "client/dist",
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "seed/**"
     }
   },
   "crons": [
     {
       "path": "/api/attempts/finalize-expired",
-      "schedule": "* * * * *"
+      "schedule": "0 0 * * *"
     }
   ],
   "rewrites": [
     {
       "source": "/api",
-      "destination": {
-        "service": "server"
-      }
+      "destination": "/api/index.js"
     },
     {
       "source": "/api/(.*)",
-      "destination": {
-        "service": "server"
-      }
+      "destination": "/api/index.js"
     },
     {
       "source": "/(.*)",
-      "destination": {
-        "service": "client"
-      }
+      "destination": "/index.html"
     }
   ]
 }
+

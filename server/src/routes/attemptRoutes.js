@@ -25,8 +25,8 @@ function requireCronSecret(req, res, next) {
   next();
 }
 
-// POST /api/attempts/finalize-expired (Vercel Cron Maintenance Endpoint)
-router.post('/finalize-expired', requireCronSecret, async (req, res, next) => {
+// POST /api/attempts/finalize-expired or GET (Vercel Cron Maintenance Endpoint)
+router.all('/finalize-expired', requireCronSecret, async (req, res, next) => {
   try {
     const now = new Date();
     const expiredAttempts = await Attempt.find({
