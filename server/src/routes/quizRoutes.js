@@ -2,7 +2,7 @@ import express from 'express';
 import { Quiz } from '../models/Quiz.js';
 import { Question } from '../models/Question.js';
 import { Attempt } from '../models/Attempt.js';
-import { requireAuth, requireRole } from '../middleware/auth.js';
+import { requireAuth, requireRole, optionalAuth } from '../middleware/auth.js';
 import { validate } from '../middleware/validate.js';
 import {
   createQuizSchema,
@@ -17,11 +17,11 @@ import { finalizeAttempt } from '../services/scoringService.js';
 
 const router = express.Router();
 
-// GET /api/quizzes (students see only published, teachers see all or their own)
-router.get('/', requireAuth, async (req, res, next) => {
+// GET /api/quizzes (students and guests see published, teachers see all or their own)
+router.get('/', optionalAuth, async (req, res, next) => {
   try {
     const filter = {};
-    if (req.user.role === 'student') {
+    if (!req.user || req.user.role === 'student') {
       filter.isPublished = true;
     } else if (req.user.role === 'teacher') {
       const onlyMine = req.query.mine === 'true';
@@ -40,8 +40,8 @@ router.get('/', requireAuth, async (req, res, next) => {
   }
 });
 
-// GET /api/quizzes/:id
-router.get('/:id', requireAuth, async (req, res, next) => {
+// GET /api/quizzes/:id (Public / Student gets safe student questions; teacher gets full)
+router.get('/:id', optionalAuth, async (req, res, next) => {
   try {
     const quiz = await Quiz.findById(req.params.id)
       .populate('createdBy', 'name email')
@@ -53,14 +53,16 @@ router.get('/:id', requireAuth, async (req, res, next) => {
       });
     }
 
-    if (req.user.role === 'student' && !quiz.isPublished) {
+    const isStudentOrGuest = !req.user || req.user.role === 'student';
+
+    if (isStudentOrGuest && !quiz.isPublished) {
       return res.status(404).json({
         error: { code: 'NOT_FOUND', message: 'Quiz is not published yet' },
       });
     }
 
-    // Integrity: strip correctAnswer and explanation for students
-    if (req.user.role === 'student') {
+    // Integrity: strip correctAnswer and explanation for students and guests
+    if (isStudentOrGuest) {
       const studentQuestions = quiz.questions.map((q) =>
         typeof q.toStudentJSON === 'function' ? q.toStudentJSON() : q
       );
@@ -402,7 +404,7 @@ router.post('/seed', async (req, res, next) => {
           const { runSeed } = await import('../seed/seedRunner.js');
           const result = await runSeed();
           return res.status(200).json({
-            message: 'Database successfully seeded with 130 questions',
+            message: `Database successfully seeded with ${result.questionsCount} questions`,
             quizId: result.quiz._id,
             questionsCount: result.questionsCount,
           });
@@ -413,7 +415,7 @@ router.post('/seed', async (req, res, next) => {
     const { runSeed } = await import('../seed/seedRunner.js');
     const result = await runSeed();
     return res.status(200).json({
-      message: 'Database successfully seeded with 130 questions',
+      message: `Database successfully seeded with ${result.questionsCount} questions`,
       quizId: result.quiz._id,
       questionsCount: result.questionsCount,
     });

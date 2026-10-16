@@ -7,24 +7,20 @@ export function ProtectedRoute({ children, requiredRole }) {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center text-slate-400">
-        <div className="w-10 h-10 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin mb-4" />
-        <p className="text-sm">Loading PsyPrep session...</p>
+      <div className="min-h-[50vh] flex flex-col items-center justify-center text-[#66645F] font-mono text-xs">
+        <div className="w-8 h-8 border-2 border-[#D96836] border-t-transparent rounded-full animate-spin mb-3" />
+        <p>Loading PsyPrep Session...</p>
       </div>
     );
   }
 
-  if (!isAuthenticated) {
-    return <Navigate to="/login" replace />;
-  }
-
-  if (requiredRole && user.role !== requiredRole) {
-    // Redirect students attempting to access teacher routes
-    if (user.role === 'student') {
-      return <Navigate to="/dashboard" replace />;
+  // Teacher console role restriction
+  if (requiredRole === 'teacher') {
+    if (!isAuthenticated || user?.role !== 'teacher') {
+      return <Navigate to="/" replace />;
     }
-    return <Navigate to="/teacher" replace />;
   }
 
+  // All student mock tests and general routes are open access
   return children;
 }

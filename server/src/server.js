@@ -21,7 +21,7 @@ async function start() {
         const memoryUri = memoryServer.getUri();
         await connectDB(memoryUri);
         console.log(`✅ Connected to embedded MongoDB at ${memoryUri}`);
-        console.log('🌱 Auto-seeding 130 questions and default accounts...');
+        console.log('🌱 Auto-seeding 140 questions and default accounts...');
         await runSeed();
       } else {
         throw dbErr;

@@ -3,11 +3,18 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 import App from './App';
 
-describe('App root component', () => {
-  it('renders application and loads initial view', () => {
+describe('App root component (Open Access & 50 Mock Tests)', () => {
+  it('renders application and loads Mock Test Dashboard directly without signing in', () => {
     render(<App />);
-    // When not logged in, redirects to login page showing PsyPrep
-    expect(screen.getByRole('heading', { name: /PsyPrep/i })).toBeInTheDocument();
-    expect(screen.getByText(/Online Mock Test & Quiz Engine/i)).toBeInTheDocument();
+
+    // Renders primary heading without requiring login
+    expect(
+      screen.getByRole('heading', { name: /Psychology of Learning Mock Tests/i })
+    ).toBeInTheDocument();
+
+    // Verifies key metrics displayed
+    expect(screen.getByText(/50-Set Computer-Based Mock Exam Platform/i)).toBeInTheDocument();
+    expect(screen.getByText(/Mock Test Set 01/i)).toBeInTheDocument();
+    expect(screen.getByText(/Mock Test Set 50/i)).toBeInTheDocument();
   });
 });

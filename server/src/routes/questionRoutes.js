@@ -5,7 +5,56 @@ import { requireAuth, requireRole } from '../middleware/auth.js';
 import { validate } from '../middleware/validate.js';
 import { updateQuestionSchema } from '../validation/schemas.js';
 
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
 const router = express.Router();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const SEED_FILE = path.resolve(__dirname, '../../../seed/questions.json');
+
+// Helper to load question bank from seed file
+function loadSeedQuestions() {
+  let filePath = SEED_FILE;
+  if (!fs.existsSync(filePath)) {
+    filePath = path.resolve(process.cwd(), 'seed/questions.json');
+  }
+  if (fs.existsSync(filePath)) {
+    return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+  }
+  return [];
+}
+
+// GET /api/questions (Public Question Bank)
+router.get('/', async (req, res, next) => {
+  try {
+    const questions = await Question.find({}).sort({ questionNumber: 1 });
+    if (questions && questions.length > 0) {
+      return res.status(200).json({ questions, count: questions.length });
+    }
+    const seedQuestions = loadSeedQuestions();
+    return res.status(200).json({ questions: seedQuestions, count: seedQuestions.length });
+  } catch (err) {
+    const seedQuestions = loadSeedQuestions();
+    return res.status(200).json({ questions: seedQuestions, count: seedQuestions.length });
+  }
+});
+
+// GET /api/questions/bank (Public Question Bank direct endpoint)
+router.get('/bank', async (req, res, next) => {
+  try {
+    const seedQuestions = loadSeedQuestions();
+    return res.status(200).json({
+      success: true,
+      questions: seedQuestions,
+      count: seedQuestions.length,
+      totalCount: seedQuestions.length,
+    });
+  } catch (err) {
+    next(err);
+  }
+});
 
 // PATCH /api/questions/:id
 router.patch(
