@@ -134,6 +134,113 @@ export async function createMockTestAttempt(setNumber) {
   return attempt;
 }
 
+export const FULL_MOCK_CONFIG = {
+  SET_IDENTIFIER: 'full',
+  TITLE: 'Full Question Bank Mock Test',
+  FULL_TITLE: 'Full Question Bank Mock Test (140 Questions)',
+  SUBTITLE: 'Practice all 140 questions in one complete mock examination.',
+  TOTAL_QUESTIONS: 140,
+  DURATION_MINUTES: 180,
+  TOTAL_MARKS: 140,
+  NEGATIVE_MARKING: 'None',
+  ACCESS: 'Open access, no sign-in required',
+};
+
+/**
+ * Generates a full 140-question mock test attempt using all questions in the bank.
+ * Questions are randomized in order for each new attempt without altering original question data.
+ */
+export async function createFullMockTestAttempt() {
+  const bank = await getQuestionBank();
+  const totalCount = bank.length;
+
+  if (totalCount === 0) {
+    throw new Error('Question bank is empty. Cannot initiate full mock test.');
+  }
+
+  // Fisher-Yates random shuffle of all 140 questions without modifying original bank
+  const selectedQuestions = sampleWithoutReplacement(bank, totalCount);
+
+  const now = Date.now();
+  const attemptId = `mock_set_full_${now}_${Math.random().toString(36).substring(2, 7)}`;
+  const deadline = now + FULL_MOCK_CONFIG.DURATION_MINUTES * 60 * 1000;
+
+  // Initialize answer tracking records for all 140 questions
+  const initialAnswers = {};
+  selectedQuestions.forEach((q, idx) => {
+    initialAnswers[q.id] = {
+      questionId: q.id,
+      response: null,
+      markedForReview: false,
+      visited: idx === 0, // First question visited initially
+      timeSpentMs: 0,
+    };
+  });
+
+  const attempt = {
+    attemptId,
+    setNumber: FULL_MOCK_CONFIG.SET_IDENTIFIER,
+    setTitle: FULL_MOCK_CONFIG.FULL_TITLE,
+    totalQuestions: totalCount,
+    durationMinutes: FULL_MOCK_CONFIG.DURATION_MINUTES,
+    startedAt: now,
+    deadline,
+    status: 'in-progress',
+    questions: selectedQuestions,
+    answers: initialAnswers,
+    submittedAt: null,
+    score: null,
+    maxScore: totalCount,
+    percentage: null,
+    correctCount: 0,
+    incorrectCount: 0,
+    unansweredCount: totalCount,
+    markedCount: 0,
+  };
+
+  saveMockAttempt(attempt);
+  try {
+    localStorage.setItem(`${ACTIVE_SET_PREFIX}${FULL_MOCK_CONFIG.SET_IDENTIFIER}`, attemptId);
+  } catch {
+    // Ignore localStorage quota errors
+  }
+
+  return attempt;
+}
+
+/**
+ * Retrieves summary status and previous performance metrics for the Full Mock Test.
+ */
+export function getFullMockSummary() {
+  const historyRaw = (() => {
+    try {
+      return JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]');
+    } catch {
+      return [];
+    }
+  })();
+
+  const fullHistory = historyRaw.filter((h) => String(h.setNumber) === FULL_MOCK_CONFIG.SET_IDENTIFIER);
+  const activeAttempt = getActiveAttemptForSet(FULL_MOCK_CONFIG.SET_IDENTIFIER);
+
+  const bestPercentage = fullHistory.length > 0
+    ? Math.max(...fullHistory.map((h) => h.percentage || 0))
+    : null;
+  const latestAttempt = fullHistory[0] || null;
+
+  return {
+    ...FULL_MOCK_CONFIG,
+    hasActiveAttempt: !!activeAttempt,
+    activeAttemptId: activeAttempt ? activeAttempt.attemptId : null,
+    activeAttemptRemainingMs: activeAttempt ? Math.max(0, activeAttempt.deadline - Date.now()) : 0,
+    attemptsCount: fullHistory.length,
+    bestPercentage,
+    latestScore: latestAttempt ? latestAttempt.score : null,
+    latestPercentage: latestAttempt ? latestAttempt.percentage : null,
+    latestSubmittedAt: latestAttempt ? latestAttempt.submittedAt : null,
+  };
+}
+
 /**
  * Saves a mock test attempt into localStorage.
  */
@@ -163,12 +270,12 @@ export function getMockAttempt(attemptId) {
 }
 
 /**
- * Checks for an active, unexpired attempt for a given set number.
+ * Checks for an active, unexpired attempt for a given set number or identifier (e.g. 1..50, 'full').
  */
 export function getActiveAttemptForSet(setNumber) {
   try {
-    const parsedSetNumber = Number(setNumber);
-    const attemptId = localStorage.getItem(`${ACTIVE_SET_PREFIX}${parsedSetNumber}`);
+    const setKey = String(setNumber);
+    const attemptId = localStorage.getItem(`${ACTIVE_SET_PREFIX}${setKey}`);
     if (!attemptId) return null;
 
     const attempt = getMockAttempt(attemptId);

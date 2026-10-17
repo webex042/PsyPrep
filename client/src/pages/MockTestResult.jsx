@@ -16,6 +16,7 @@ import {
 import {
   getMockAttempt,
   createMockTestAttempt,
+  createFullMockTestAttempt,
 } from '../services/mockTestService';
 
 export function MockTestResult() {
@@ -35,7 +36,9 @@ export function MockTestResult() {
 
   const handleRetake = async () => {
     try {
-      const newAttempt = await createMockTestAttempt(setNumber);
+      const newAttempt = String(setNumber) === 'full'
+        ? await createFullMockTestAttempt()
+        : await createMockTestAttempt(setNumber);
       navigate(`/mock-test/${setNumber}/attempt/${newAttempt.attemptId}`);
     } catch (err) {
       console.error('Failed to create retake attempt:', err);
@@ -113,7 +116,11 @@ export function MockTestResult() {
               className="py-2 px-4 btn-primary-orange text-xs flex items-center space-x-1.5"
             >
               <RotateCcw className="w-3.5 h-3.5" />
-              <span>Retake Test (New 50 Questions)</span>
+              <span>
+                {String(setNumber) === 'full'
+                  ? 'Retake Full Mock Test (All 140 Questions)'
+                  : 'Retake Test (New 50 Questions)'}
+              </span>
             </button>
             <Link
               to="/"
@@ -136,7 +143,7 @@ export function MockTestResult() {
               <span className="font-display font-bold text-3xl sm:text-4xl text-[#191919]">
                 {attempt.score}
               </span>
-              <span className="text-xs text-[#66645F]">/ {attempt.maxScore || 50}</span>
+              <span className="text-xs text-[#66645F]">/ {attempt.maxScore || (String(setNumber) === 'full' ? 140 : 50)}</span>
             </div>
             <span className="text-[10px] text-[#65715B] font-semibold mt-1 block">
               1 Mark Per Question
@@ -207,7 +214,7 @@ export function MockTestResult() {
                   : 'text-[#66645F] hover:bg-[#FAF7F0]'
               }`}
             >
-              All (50)
+              All ({reviewList.length})
             </button>
             <button
               onClick={() => setFilterTab('correct')}

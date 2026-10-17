@@ -3,11 +3,14 @@ import {
   getBundledQuestionBank,
   sampleWithoutReplacement,
   createMockTestAttempt,
+  createFullMockTestAttempt,
   saveMockAttempt,
   getMockAttempt,
   submitMockAttempt,
   getAllSetsSummary,
+  getFullMockSummary,
   MOCK_TEST_CONFIG,
+  FULL_MOCK_CONFIG,
 } from './mockTestService';
 
 describe('Mock Test Service & Question Bank Logic', () => {
@@ -117,5 +120,63 @@ describe('Mock Test Service & Question Bank Logic', () => {
     expect(sets[0].title).toBe('Mock Test Set 01');
     expect(sets[49].title).toBe('Mock Test Set 50');
     expect(sets[0].totalQuestions).toBe(50);
+  });
+
+  it('creates, persists, and retrieves a full 140-question mock test attempt with 180 mins duration', async () => {
+    const attempt = await createFullMockTestAttempt();
+
+    expect(attempt.setNumber).toBe('full');
+    expect(attempt.setTitle).toBe('Full Question Bank Mock Test (140 Questions)');
+    expect(attempt.totalQuestions).toBe(140);
+    expect(attempt.durationMinutes).toBe(180);
+    expect(attempt.maxScore).toBe(140);
+    expect(attempt.status).toBe('in-progress');
+    expect(attempt.questions).toHaveLength(140);
+
+    // Verify all 140 questions are unique
+    const uniqueIds = new Set(attempt.questions.map((q) => q.id));
+    expect(uniqueIds.size).toBe(140);
+
+    // Verify localStorage persistence
+    const retrieved = getMockAttempt(attempt.attemptId);
+    expect(retrieved).not.toBeNull();
+    expect(retrieved.attemptId).toBe(attempt.attemptId);
+    expect(retrieved.questions).toHaveLength(140);
+  });
+
+  it('evaluates a full 140-question mock test submission and updates full mock summary', async () => {
+    const attempt = await createFullMockTestAttempt();
+
+    // Answer first 80 questions correctly, 20 incorrectly, leave 40 unanswered
+    const answers = {};
+    for (let i = 0; i < 140; i++) {
+      const q = attempt.questions[i];
+      if (i < 80) {
+        answers[q.id] = { response: q.correctAnswer, markedForReview: false, visited: true };
+      } else if (i < 100) {
+        answers[q.id] = { response: 'INCORRECT_CHOICE', markedForReview: true, visited: true };
+      } else {
+        answers[q.id] = { response: null, markedForReview: false, visited: false };
+      }
+    }
+
+    const result = submitMockAttempt(attempt.attemptId, answers);
+
+    expect(result.status).toBe('completed');
+    expect(result.score).toBe(80);
+    expect(result.maxScore).toBe(140);
+    expect(result.correctCount).toBe(80);
+    expect(result.incorrectCount).toBe(20);
+    expect(result.unansweredCount).toBe(40);
+    expect(result.markedCount).toBe(20);
+    expect(result.percentage).toBe(57.1); // (80/140)*100 = 57.14 -> 57.1%
+    expect(result.questionsReview).toHaveLength(140);
+
+    // Verify getFullMockSummary reflects the completed attempt
+    const summary = getFullMockSummary();
+    expect(summary.attemptsCount).toBe(1);
+    expect(summary.latestScore).toBe(80);
+    expect(summary.bestPercentage).toBe(57.1);
+    expect(summary.hasActiveAttempt).toBe(false);
   });
 });

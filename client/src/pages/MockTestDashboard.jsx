@@ -17,19 +17,26 @@ import {
 import {
   getAllSetsSummary,
   createMockTestAttempt,
+  createFullMockTestAttempt,
+  getFullMockSummary,
   MOCK_TEST_CONFIG,
+  FULL_MOCK_CONFIG,
 } from '../services/mockTestService';
 
-export function MockTestDashboard() {
+export function MockTestDashboard({ defaultTab = 'all' }) {
   const navigate = useNavigate();
   const [sets, setSets] = useState([]);
+  const [fullMockSummary, setFullMockSummary] = useState(getFullMockSummary());
+  const [activeMainSection, setActiveMainSection] = useState(defaultTab); // 'all' | 'full-mock' | '50-sets'
   const [searchQuery, setSearchQuery] = useState('');
   const [filterTab, setFilterTab] = useState('all'); // 'all' | 'completed' | 'unattempted' | 'active'
   const [startingSetNumber, setStartingSetNumber] = useState(null);
+  const [isStartingFull, setIsStartingFull] = useState(false);
 
   useEffect(() => {
     const summary = getAllSetsSummary();
     setSets(summary);
+    setFullMockSummary(getFullMockSummary());
   }, []);
 
   const handleStartSet = async (set) => {
@@ -49,6 +56,38 @@ export function MockTestDashboard() {
       console.error('Failed to initiate mock test set:', err);
     } finally {
       setStartingSetNumber(null);
+    }
+  };
+
+  const handleStartFullMock = async () => {
+    try {
+      setIsStartingFull(true);
+      // If there is an active unexpired attempt, resume it
+      if (fullMockSummary.hasActiveAttempt && fullMockSummary.activeAttemptId) {
+        navigate(`/mock-test/${FULL_MOCK_CONFIG.SET_IDENTIFIER}/attempt/${fullMockSummary.activeAttemptId}`);
+        return;
+      }
+
+      // Generate a fresh randomized 140-question mock test attempt
+      const attempt = await createFullMockTestAttempt();
+      navigate(`/mock-test/${FULL_MOCK_CONFIG.SET_IDENTIFIER}/attempt/${attempt.attemptId}`);
+    } catch (err) {
+      console.error('Failed to initiate full mock test:', err);
+    } finally {
+      setIsStartingFull(false);
+    }
+  };
+
+  const handleRetakeFullMock = async (e) => {
+    if (e) e.stopPropagation();
+    try {
+      setIsStartingFull(true);
+      const attempt = await createFullMockTestAttempt();
+      navigate(`/mock-test/${FULL_MOCK_CONFIG.SET_IDENTIFIER}/attempt/${attempt.attemptId}`);
+    } catch (err) {
+      console.error('Failed to retake full mock test:', err);
+    } finally {
+      setIsStartingFull(false);
     }
   };
 
@@ -109,7 +148,7 @@ export function MockTestDashboard() {
           </div>
 
           {/* Quick Metrics Headline Cards: Swiss Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 shrink-0 font-mono text-xs">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 shrink-0 font-mono text-xs">
             <div className="p-4 bg-[#FAF7F0] border border-[#D9D2C5] rounded-[2px] min-w-[120px]">
               <span className="text-[10px] text-[#66645F] uppercase tracking-wider block font-bold">
                 Mock Test Sets
@@ -125,7 +164,7 @@ export function MockTestDashboard() {
 
             <div className="p-4 bg-[#FAF7F0] border border-[#D9D2C5] rounded-[2px] min-w-[120px]">
               <span className="text-[10px] text-[#66645F] uppercase tracking-wider block font-bold">
-                Per Mock Test
+                Per Set
               </span>
               <span className="font-display font-bold text-2xl sm:text-3xl text-[#D96836] mt-1 block">
                 {MOCK_TEST_CONFIG.QUESTIONS_PER_TEST}
@@ -136,7 +175,20 @@ export function MockTestDashboard() {
               </span>
             </div>
 
-            <div className="p-4 bg-[#FAF7F0] border border-[#D9D2C5] rounded-[2px] min-w-[120px] col-span-2 sm:col-span-1">
+            <div className="p-4 bg-[#FAF7F0] border border-[#D9D2C5] rounded-[2px] min-w-[120px]">
+              <span className="text-[10px] text-[#66645F] uppercase tracking-wider block font-bold">
+                Full Mock Test
+              </span>
+              <span className="font-display font-bold text-2xl sm:text-3xl text-[#D96836] mt-1 block">
+                140
+              </span>
+              <span className="text-[10px] text-[#66645F] mt-1 flex items-center">
+                <Clock className="w-3 h-3 mr-1" />
+                180 Minutes
+              </span>
+            </div>
+
+            <div className="p-4 bg-[#FAF7F0] border border-[#D9D2C5] rounded-[2px] min-w-[120px]">
               <span className="text-[10px] text-[#66645F] uppercase tracking-wider block font-bold">
                 Question Bank
               </span>
@@ -144,7 +196,7 @@ export function MockTestDashboard() {
                 {MOCK_TEST_CONFIG.TOTAL_BANK_QUESTIONS}
               </span>
               <span className="text-[10px] text-[#66645F] mt-1 block">
-                Official Curated MCQs
+                Curated MCQs
               </span>
             </div>
           </div>
@@ -162,6 +214,13 @@ export function MockTestDashboard() {
             </span>
           </div>
           <div className="flex items-center space-x-3">
+            <button
+              onClick={handleStartFullMock}
+              className="swiss-tag bg-[#FAF7F0] hover:bg-[#F0ECE1] text-[#191919] border-[#191919] flex items-center space-x-1.5 font-bold cursor-pointer transition-colors"
+            >
+              <Sparkles className="w-3 h-3 text-[#D96836]" />
+              <span>Full Mock Test (140 Qs • 180 Mins)</span>
+            </button>
             <Link
               to="/question-bank"
               className="swiss-tag bg-white hover:bg-[#FAF7F0] text-[#D96836] border-[#D96836] flex items-center space-x-1"
@@ -173,6 +232,195 @@ export function MockTestDashboard() {
           </div>
         </div>
       </div>
+
+      {/* Top Section Navigation Tabs */}
+      <div className="flex items-center space-x-2 border-b border-[#D9D2C5] pb-2 font-mono text-xs overflow-x-auto">
+        <button
+          onClick={() => setActiveMainSection('all')}
+          className={`px-3.5 py-1.5 rounded-[2px] transition-all whitespace-nowrap flex items-center space-x-1.5 ${
+            activeMainSection === 'all'
+              ? 'bg-[#191919] text-white font-bold'
+              : 'bg-white text-[#66645F] hover:bg-[#FAF7F0] border border-[#D9D2C5]'
+          }`}
+        >
+          <span>All Examination Options</span>
+        </button>
+
+        <button
+          onClick={() => setActiveMainSection('full-mock')}
+          className={`px-3.5 py-1.5 rounded-[2px] transition-all whitespace-nowrap flex items-center space-x-1.5 ${
+            activeMainSection === 'full-mock'
+              ? 'bg-[#D96836] text-white font-bold'
+              : 'bg-white text-[#D96836] hover:bg-[#FDF2EC] border border-[#D96836]'
+          }`}
+        >
+          <Sparkles className="w-3.5 h-3.5" />
+          <span>Full Question Bank Mock Test (140 Qs)</span>
+        </button>
+
+        <button
+          onClick={() => setActiveMainSection('50-sets')}
+          className={`px-3.5 py-1.5 rounded-[2px] transition-all whitespace-nowrap flex items-center space-x-1.5 ${
+            activeMainSection === '50-sets'
+              ? 'bg-[#191919] text-white font-bold'
+              : 'bg-white text-[#66645F] hover:bg-[#FAF7F0] border border-[#D9D2C5]'
+          }`}
+        >
+          <Layers className="w-3.5 h-3.5" />
+          <span>50 Mock Tests (Sets 01–50)</span>
+        </button>
+
+        <Link
+          to="/question-bank"
+          className="px-3.5 py-1.5 rounded-[2px] transition-all whitespace-nowrap flex items-center space-x-1.5 bg-white text-[#66645F] hover:bg-[#FAF7F0] border border-[#D9D2C5]"
+        >
+          <BookOpen className="w-3.5 h-3.5" />
+          <span>Question Bank Repository (140)</span>
+        </Link>
+      </div>
+
+      {/* SECTION 1: Full Question Bank Mock Test (140 Questions) Showcase Card */}
+      {(activeMainSection === 'all' || activeMainSection === 'full-mock') && (
+        <section
+          id="full-mock-test-section"
+          className="swiss-card p-6 sm:p-8 bg-[#FFFFFF] border-2 border-[#191919] shadow-sm relative overflow-hidden"
+        >
+          <div className="absolute top-0 left-0 bottom-0 w-2.5 bg-[#D96836]" />
+
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 pl-2 sm:pl-3">
+            <div className="max-w-2xl">
+              <div className="flex flex-wrap items-center gap-2 mb-2 font-mono text-xs">
+                <span className="px-2.5 py-0.5 bg-[#D96836] text-white font-bold rounded-[2px] uppercase tracking-wider text-[10px]">
+                  GRAND MOCK EXAMINATION
+                </span>
+                <span className="px-2 py-0.5 bg-[#FAF7F0] border border-[#D9D2C5] text-[#191919] font-bold rounded-[2px] text-[10px]">
+                  ALL 140 QUESTIONS
+                </span>
+                {fullMockSummary.hasActiveAttempt ? (
+                  <span className="font-mono text-[10px] text-[#D96836] bg-[#FBF0EA] px-2 py-0.5 rounded-[2px] font-bold animate-pulse">
+                    ● IN PROGRESS
+                  </span>
+                ) : fullMockSummary.attemptsCount > 0 ? (
+                  <span className="font-mono text-[10px] text-[#65715B] bg-[#F0F3EE] px-2 py-0.5 rounded-[2px] font-bold border border-[#D9D2C5]">
+                    Best: {fullMockSummary.bestPercentage}% ({fullMockSummary.attemptsCount} attempt{fullMockSummary.attemptsCount > 1 ? 's' : ''})
+                  </span>
+                ) : null}
+              </div>
+
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-[#191919] tracking-tight">
+                Full Question Bank Mock Test
+              </h2>
+              <p className="text-[#66645F] text-xs sm:text-sm mt-1.5 font-sans leading-relaxed">
+                Practice all 140 questions in one complete mock examination.
+              </p>
+
+              {/* Required Details Display Grid:
+                  - Total Questions: 140
+                  - Duration: 180 minutes
+                  - Marks: 140
+                  - Negative Marking: None
+                  - Access: Open access, no sign-in required */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 mt-5 font-mono text-xs">
+                <div className="p-3 bg-[#FAF7F0] border border-[#D9D2C5] rounded-[2px]">
+                  <span className="text-[10px] text-[#66645F] uppercase font-bold block">Total Questions</span>
+                  <span className="font-display font-bold text-xl text-[#191919] mt-0.5 block">140</span>
+                  <span className="text-[10px] text-[#66645F]">Full Question Bank</span>
+                </div>
+
+                <div className="p-3 bg-[#FAF7F0] border border-[#D9D2C5] rounded-[2px]">
+                  <span className="text-[10px] text-[#66645F] uppercase font-bold block">Duration</span>
+                  <span className="font-display font-bold text-xl text-[#D96836] mt-0.5 block">180 Mins</span>
+                  <span className="text-[10px] text-[#66645F]">3-Hour Timed CBT</span>
+                </div>
+
+                <div className="p-3 bg-[#FAF7F0] border border-[#D9D2C5] rounded-[2px]">
+                  <span className="text-[10px] text-[#66645F] uppercase font-bold block">Marks</span>
+                  <span className="font-display font-bold text-xl text-[#191919] mt-0.5 block">140</span>
+                  <span className="text-[10px] text-[#65715B] font-semibold">+1 Mark / Question</span>
+                </div>
+
+                <div className="p-3 bg-[#FAF7F0] border border-[#D9D2C5] rounded-[2px]">
+                  <span className="text-[10px] text-[#66645F] uppercase font-bold block">Negative Marking</span>
+                  <span className="font-display font-bold text-xl text-[#65715B] mt-0.5 block">None</span>
+                  <span className="text-[10px] text-[#66645F]">Zero Negative Marking</span>
+                </div>
+
+                <div className="p-3 bg-[#FAF7F0] border border-[#D9D2C5] rounded-[2px] col-span-2 sm:col-span-1">
+                  <span className="text-[10px] text-[#66645F] uppercase font-bold block">Access</span>
+                  <span className="font-sans font-bold text-xs text-[#65715B] mt-1 block">Open access</span>
+                  <span className="text-[10px] text-[#66645F]">No sign-in required</span>
+                </div>
+              </div>
+
+              {fullMockSummary.attemptsCount > 0 && fullMockSummary.latestScore !== null && (
+                <div className="mt-4 p-2.5 bg-[#FAF7F0] border border-[#D9D2C5] rounded-[2px] font-mono text-[11px] text-[#191919] flex flex-wrap items-center justify-between gap-2">
+                  <span>Previous Full Mock Score:</span>
+                  <strong className="text-[#65715B]">
+                    {fullMockSummary.latestScore} / 140 ({fullMockSummary.latestPercentage}%) • Best: {fullMockSummary.bestPercentage}%
+                  </strong>
+                </div>
+              )}
+            </div>
+
+            {/* Action Buttons for Full Mock Test */}
+            <div className="shrink-0 flex flex-col sm:flex-row lg:flex-col gap-3 min-w-[220px]">
+              {fullMockSummary.hasActiveAttempt ? (
+                <>
+                  <button
+                    onClick={handleStartFullMock}
+                    disabled={isStartingFull}
+                    className="w-full py-3 px-5 btn-primary-orange text-sm flex items-center justify-center space-x-2 font-display font-bold shadow-sm"
+                  >
+                    <Play className="w-4 h-4 fill-current" />
+                    <span>{isStartingFull ? 'Resuming...' : 'Resume Full Mock Test'}</span>
+                  </button>
+                  <button
+                    onClick={handleRetakeFullMock}
+                    disabled={isStartingFull}
+                    className="w-full py-2 px-3 btn-secondary-neutral text-xs flex items-center justify-center space-x-1 font-mono"
+                    title="Start fresh 140-question attempt"
+                  >
+                    <RotateCcw className="w-3.5 h-3.5" />
+                    <span>Start Fresh Attempt (140)</span>
+                  </button>
+                </>
+              ) : fullMockSummary.attemptsCount > 0 ? (
+                <>
+                  <button
+                    onClick={handleStartFullMock}
+                    disabled={isStartingFull}
+                    className="w-full py-3 px-5 btn-primary-orange text-sm flex items-center justify-center space-x-2 font-display font-bold shadow-sm"
+                  >
+                    <Play className="w-4 h-4 fill-current" />
+                    <span>{isStartingFull ? 'Preparing 140 Questions...' : 'Start Full Mock Test'}</span>
+                  </button>
+                  <button
+                    onClick={handleRetakeFullMock}
+                    disabled={isStartingFull}
+                    className="w-full py-2 px-3 btn-secondary-neutral text-xs flex items-center justify-center space-x-1 font-mono"
+                  >
+                    <RotateCcw className="w-3.5 h-3.5" />
+                    <span>Retake Full Test (140 Qs)</span>
+                  </button>
+                </>
+              ) : (
+                <button
+                  onClick={handleStartFullMock}
+                  disabled={isStartingFull}
+                  className="w-full py-3.5 px-6 btn-primary-orange text-sm sm:text-base flex items-center justify-center space-x-2 font-display font-bold shadow-md hover:scale-[1.01] transition-all"
+                >
+                  <Play className="w-4 h-4 fill-current" />
+                  <span>{isStartingFull ? 'Preparing 140 Questions...' : 'Start Full Mock Test'}</span>
+                </button>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* SECTION 2: 50 Mock Tests (Sets 01–50) */}
+      {(activeMainSection === 'all' || activeMainSection === '50-sets') && (
+        <div className="space-y-6">
 
       {/* Filter and Search Bar */}
       <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-[#FFFFFF] p-3 border border-[#D9D2C5] rounded-[2px]">
@@ -367,5 +615,7 @@ export function MockTestDashboard() {
         )}
       </div>
     </div>
-  );
+  )}
+</div>
+);
 }

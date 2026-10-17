@@ -83,4 +83,32 @@ describe('Question Palette & Submit Confirmation Logic', () => {
     expect(summary.unvisited).toBe(1); // q_5
     expect(summary.visited).toBe(1); // q_4
   });
+
+  it('accurately computes submit confirmation and palette summary for a full 140-question mock test', () => {
+    const questions140 = Array.from({ length: 140 }, (_, i) => ({ id: `q_${i + 1}` }));
+    const answers140 = {};
+
+    // 100 answered (including 10 answered+marked), 15 marked without answer, 15 visited, 10 unvisited
+    for (let i = 0; i < 90; i++) {
+      answers140[`q_${i + 1}`] = { visited: true, response: 'A', markedForReview: false };
+    }
+    for (let i = 90; i < 100; i++) {
+      answers140[`q_${i + 1}`] = { visited: true, response: 'B', markedForReview: true };
+    }
+    for (let i = 100; i < 115; i++) {
+      answers140[`q_${i + 1}`] = { visited: true, response: null, markedForReview: true };
+    }
+    for (let i = 115; i < 130; i++) {
+      answers140[`q_${i + 1}`] = { visited: true, response: null, markedForReview: false };
+    }
+    // 130 to 140 are unvisited
+
+    const summary = computeSubmitSummary(questions140, answers140);
+    expect(summary.total).toBe(140);
+    expect(summary.answered).toBe(100);
+    expect(summary.unanswered).toBe(40);
+    expect(summary.marked).toBe(25); // 10 ans+marked + 15 marked
+    expect(summary.visited).toBe(15);
+    expect(summary.unvisited).toBe(10);
+  });
 });

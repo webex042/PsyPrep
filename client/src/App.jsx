@@ -42,10 +42,11 @@ export default function App() {
 
           <main className="flex-1 w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-5 sm:py-8">
             <Routes>
-              {/* Core 50-Set Mock Test Routes — Open Access without authentication */}
+              {/* Core Mock Test Suite & Question Bank Routes — Open Access without authentication */}
               <Route path="/" element={<MockTestDashboard />} />
               <Route path="/dashboard" element={<MockTestDashboard />} />
               <Route path="/mock-tests" element={<MockTestDashboard />} />
+              <Route path="/full-mock-test" element={<MockTestDashboard defaultTab="full-mock" />} />
               <Route path="/question-bank" element={<QuestionBankView />} />
 
               <Route

@@ -19,6 +19,7 @@ import {
   saveMockAttempt,
   submitMockAttempt,
   createMockTestAttempt,
+  createFullMockTestAttempt,
 } from '../services/mockTestService';
 
 export function MockTestRunner() {
@@ -35,6 +36,7 @@ export function MockTestRunner() {
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [loading, setLoading] = useState(true);
   const [paletteOpen, setPaletteOpen] = useState(false);
+  const [paletteRange, setPaletteRange] = useState('all');
 
   const timerIntervalRef = useRef(null);
   const deadlineRef = useRef(null);
@@ -54,7 +56,11 @@ export function MockTestRunner() {
 
         // If not found or if set mismatch, create a new one
         if (!currentAttempt) {
-          currentAttempt = await createMockTestAttempt(setNumber);
+          if (String(setNumber) === 'full') {
+            currentAttempt = await createFullMockTestAttempt();
+          } else {
+            currentAttempt = await createMockTestAttempt(setNumber);
+          }
           navigate(`/mock-test/${setNumber}/attempt/${currentAttempt.attemptId}`, {
             replace: true,
           });
@@ -203,8 +209,9 @@ export function MockTestRunner() {
     }
   };
 
-  // Submission handler
+  // Submission handler with double-submit guard
   const handleFinalSubmit = () => {
+    if (submitting) return;
     setSubmitting(true);
     try {
       const finalized = submitMockAttempt(attempt.attemptId, answersRef.current);
@@ -229,14 +236,19 @@ export function MockTestRunner() {
   };
 
   if (loading) {
+    const isFull = String(setNumber) === 'full';
     return (
       <div className="max-w-4xl mx-auto py-20 px-4 text-center">
         <div className="swiss-card p-8 inline-block shadow-sm">
           <div className="font-mono text-sm text-[#191919] animate-pulse">
-            Loading Mock Test Set {String(setNumber).padStart(2, '0')}...
+            {isFull
+              ? 'Loading Full Question Bank Mock Test (140 Questions)...'
+              : `Loading Mock Test Set ${String(setNumber).padStart(2, '0')}...`}
           </div>
           <div className="mt-1 text-xs text-[#66645F] font-mono">
-            Randomizing 50 examination questions without replacement
+            {isFull
+              ? 'Randomizing all 140 examination questions without replacement'
+              : 'Randomizing 50 examination questions without replacement'}
           </div>
         </div>
       </div>
@@ -310,7 +322,7 @@ export function MockTestRunner() {
                   Question {currentIndex + 1} of {questions.length}
                 </span>
                 <span>•</span>
-                <span>60 Mins Timed CBT</span>
+                <span>{attempt?.durationMinutes || (String(setNumber) === 'full' ? 180 : 60)} Mins Timed CBT</span>
                 <span>•</span>
                 <span>No Negative Marking</span>
               </div>
@@ -365,7 +377,7 @@ export function MockTestRunner() {
               <div className="flex flex-wrap items-center justify-between pb-4 border-b border-[#D9D2C5] gap-3">
                 <div className="flex items-center space-x-2 font-mono text-xs">
                   <span className="px-2.5 py-1 bg-[#191919] text-white font-bold rounded-[2px]">
-                    Q. {currentIndex + 1} of 50
+                    Q. {currentIndex + 1} of {questions.length}
                   </span>
                   <span className="text-[#66645F] font-semibold">
                     [+1.00 Mark / 0.00]
@@ -526,42 +538,78 @@ export function MockTestRunner() {
             </div>
           </div>
 
-          {/* Palette Numerical Grid (1–50) */}
+          {/* Quick Range Jumps for 140-Question Mock Test */}
+          {questions.length > 50 && (
+            <div className="flex items-center gap-1 py-2.5 border-b border-[#D9D2C5] overflow-x-auto text-[11px] font-mono">
+              <span className="text-[#66645F] text-[10px] uppercase font-bold shrink-0 mr-1">Section:</span>
+              {[
+                { id: 'all', label: `All (${questions.length})` },
+                { id: '1-35', label: '1–35' },
+                { id: '36-70', label: '36–70' },
+                { id: '71-105', label: '71–105' },
+                { id: '106-140', label: '106–140' },
+              ].map((tab) => (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setPaletteRange(tab.id)}
+                  className={`px-2 py-0.5 rounded-[2px] transition-all whitespace-nowrap ${
+                    paletteRange === tab.id
+                      ? 'bg-[#191919] text-white font-bold'
+                      : 'bg-[#FAF7F0] text-[#66645F] hover:bg-[#F0ECE1]'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+          )}
+
+          {/* Palette Numerical Grid (1–140 or 1–50) */}
           <div className="pt-3">
             <div className="grid grid-cols-5 sm:grid-cols-6 md:grid-cols-7 lg:grid-cols-5 gap-1.5 max-h-[440px] overflow-y-auto pr-1 font-mono text-xs">
-              {questions.map((q, idx) => {
-                const rec = answers[q.id];
-                const isCurrent = idx === currentIndex;
-                const isVisited = !!rec?.visited;
-                const isAnswered = rec?.response !== null && rec?.response !== undefined && rec?.response !== '';
-                const isMarked = !!rec?.markedForReview;
+              {questions
+                .map((q, idx) => ({ q, idx }))
+                .filter(({ idx }) => {
+                  if (paletteRange === '1-35') return idx >= 0 && idx < 35;
+                  if (paletteRange === '36-70') return idx >= 35 && idx < 70;
+                  if (paletteRange === '71-105') return idx >= 70 && idx < 105;
+                  if (paletteRange === '106-140') return idx >= 105 && idx < 140;
+                  return true;
+                })
+                .map(({ q, idx }) => {
+                  const rec = answers[q.id];
+                  const isCurrent = idx === currentIndex;
+                  const isVisited = !!rec?.visited;
+                  const isAnswered = rec?.response !== null && rec?.response !== undefined && rec?.response !== '';
+                  const isMarked = !!rec?.markedForReview;
 
-                // Derive button style class
-                let btnStyle = 'bg-white text-[#66645F] border-[#D9D2C5]';
-                if (isAnswered && isMarked) {
-                  btnStyle = 'bg-[#65715B] text-white border-2 border-[#D96836] font-bold';
-                } else if (isMarked) {
-                  btnStyle = 'bg-[#D96836] text-white border-[#D96836] font-bold';
-                } else if (isAnswered) {
-                  btnStyle = 'bg-[#65715B] text-white border-[#65715B] font-bold';
-                } else if (isVisited) {
-                  btnStyle = 'bg-[#F5F0E6] text-[#191919] border-[#D9D2C5]';
-                }
+                  // Derive button style class
+                  let btnStyle = 'bg-white text-[#66645F] border-[#D9D2C5]';
+                  if (isAnswered && isMarked) {
+                    btnStyle = 'bg-[#65715B] text-white border-2 border-[#D96836] font-bold';
+                  } else if (isMarked) {
+                    btnStyle = 'bg-[#D96836] text-white border-[#D96836] font-bold';
+                  } else if (isAnswered) {
+                    btnStyle = 'bg-[#65715B] text-white border-[#65715B] font-bold';
+                  } else if (isVisited) {
+                    btnStyle = 'bg-[#F5F0E6] text-[#191919] border-[#D9D2C5]';
+                  }
 
-                return (
-                  <button
-                    key={q.id}
-                    type="button"
-                    onClick={() => goToQuestion(idx)}
-                    className={`h-8 rounded-[2px] border text-xs flex items-center justify-center transition-all ${btnStyle} ${
-                      isCurrent ? 'ring-2 ring-[#191919] scale-105 z-10' : ''
-                    }`}
-                    title={`Question ${idx + 1}`}
-                  >
-                    {idx + 1}
-                  </button>
-                );
-              })}
+                  return (
+                    <button
+                      key={q.id}
+                      type="button"
+                      onClick={() => goToQuestion(idx)}
+                      className={`h-8 rounded-[2px] border text-xs flex items-center justify-center transition-all ${btnStyle} ${
+                        isCurrent ? 'ring-2 ring-[#191919] scale-105 z-10' : ''
+                      }`}
+                      title={`Question ${idx + 1}`}
+                    >
+                      {idx + 1}
+                    </button>
+                  );
+                })}
             </div>
           </div>
         </aside>
@@ -574,7 +622,7 @@ export function MockTestRunner() {
             <div className="flex items-center space-x-2 text-[#D96836]">
               <FileCheck2 className="w-5 h-5" />
               <h3 className="font-display font-bold text-lg text-[#191919]">
-                Submit Mock Test Set {String(setNumber).padStart(2, '0')}
+                Submit {attempt?.setTitle || (String(setNumber) === 'full' ? 'Full Question Bank Mock Test (140 Questions)' : `Mock Test Set ${String(setNumber).padStart(2, '0')}`)}
               </h3>
             </div>
 

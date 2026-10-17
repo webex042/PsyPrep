@@ -20,10 +20,17 @@ export function Navbar() {
     navigate('/');
   };
 
+  const isFullMockActive =
+    location.pathname === '/full-mock-test' ||
+    location.pathname.startsWith('/mock-test/full');
+
   const isMockTestsActive =
-    location.pathname === '/' ||
-    location.pathname === '/dashboard' ||
-    location.pathname.startsWith('/mock-test');
+    (location.pathname === '/' ||
+      location.pathname === '/dashboard' ||
+      location.pathname === '/mock-tests' ||
+      (location.pathname.startsWith('/mock-test') && !location.pathname.startsWith('/mock-test/full'))) &&
+    !isFullMockActive;
+
   const isQuestionBankActive = location.pathname === '/question-bank';
 
   return (
@@ -61,6 +68,18 @@ export function Navbar() {
               >
                 <Layers className="w-3.5 h-3.5" />
                 <span>50 Mock Tests</span>
+              </Link>
+
+              <Link
+                to="/full-mock-test"
+                className={`px-3.5 py-1.5 rounded-[2px] transition-all flex items-center space-x-1.5 ${
+                  isFullMockActive
+                    ? 'bg-[#F5F0E6] text-[#D96836] font-semibold border border-[#D9D2C5]'
+                    : 'text-[#66645F] hover:text-[#191919] hover:bg-[#F5F0E6]'
+                }`}
+              >
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Full Mock Test (140)</span>
               </Link>
 
               <Link
@@ -147,6 +166,16 @@ export function Navbar() {
             }`}
           >
             50 Mock Tests
+          </Link>
+          <Link
+            to="/full-mock-test"
+            className={`flex-1 text-center py-1 rounded-[2px] ${
+              isFullMockActive
+                ? 'bg-[#F5F0E6] text-[#D96836] font-bold border border-[#D9D2C5]'
+                : 'text-[#66645F]'
+            }`}
+          >
+            Full Mock (140)
           </Link>
           <Link
             to="/question-bank"
